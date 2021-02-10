@@ -2,6 +2,7 @@ let colour = "", thickness = 4; //defining the input values
 function setup() {
     createCanvas(500, 500);
     rectMode(CENTER);
+    frameRate(100);
 }
 
 function getInput(input) {
