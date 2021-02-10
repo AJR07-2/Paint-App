@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+    <form>
+      <br>
+        <input type = "button" id = "everything" value = "Load Changes" onclick="getInput('everything')">
+    </form>
+    <p>Tool: Pen</p>
+    <form>
+        <label for: "colour">Pen Colour</label>
+        <input type = "color" id = "colour" value = "colour" onclick="getInput('colour')">
+        <br>
+        <label for: "thickness">Thickness of pen</label>
+        <input type = "number" id = "thickness" value = "thickness" onclick="getInput('thickness')">
+        <br>
+        <input type = "button" id = "ResetCanvas" value = "ResetCanvas" onclick="getInput('ResetCanvas')">
+    </form>
+  </head>
+  <body>
+    <script src="sketch.js"></script>
+  </body>
+</html>
