@@ -11,9 +11,9 @@ function getInput(input) {
     }
     else if (input == 'colour') {
         colour = document.getElementById('colour').value;
-    }else if (input == 'thickness') {
+    } else if (input == 'thickness') {
         thickness = document.getElementById('thickness').value;
-    }else if (input == 'ResetCanvas') {
+    } else if (input == 'ResetCanvas') {
         ClearCanvas();
     }
 }
