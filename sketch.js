@@ -1,8 +1,8 @@
 /*
 Defining variables/Setup
 */
-let colour = "black", thickness = 4; //defining the input values
-let drawingPoints = [];
+let colour = "black", thickness = 4, tool = "pen"; //defining the input values
+let drawingPoints = [], inputValues = ['colour', 'thickness', 'Tool'];
 function setup() {
     createCanvas(500, 500);
     rectMode(CENTER);
@@ -15,16 +15,14 @@ HTML-Javascript Inputs
 */
 
 function getInput(input) {
-    if (input == 'everything') {
-        colour = document.getElementById('colour').value;
-        thickness = document.getElementById('thickness').value;
-    }
-    else if (input == 'colour') {
-        colour = document.getElementById('colour').value;
+    if (input == 'colour') {
+        colour = document.getElementById(inputValues[0]).value;
     } else if (input == 'thickness') {
-        thickness = document.getElementById('thickness').value;
+        thickness = document.getElementById(inputValues[1]).value;
     } else if (input == 'ResetCanvas') {
         clear();
+    } else if (input == 'Tool') {
+        tool = document.getElementById(inputValues[2]).value;
     }
 }
 
@@ -32,6 +30,16 @@ function getInput(input) {
 Own Functions
 */
 
+function LoadChanges() {
+    for (const i of inputValues) {
+        getInput(i);
+    }
+}
+
+function canvasBorder() {
+    fill(0, 0, 0, 0);
+    rect(width / 2, height / 2, width, height);
+}
 /*
 P5 Functions
 */
@@ -60,11 +68,11 @@ function Pen() {
 }
 
 /*
-    Runtime
+Runtime
 */
 function draw() {
     strokeWeight(20);
-    fill(0, 0, 0, 0);
-    rect(width / 2, height / 2, width, height);
+    canvasBorder();
     Pen();
+    LoadChanges();
 }

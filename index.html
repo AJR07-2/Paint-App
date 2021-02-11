@@ -6,17 +6,32 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="utf-8" />
   <form>
-    <input type="button" id="everything" value="Load Changes" onclick="getInput('everything')">
     <input type="button" id="ResetCanvas" value="Reset Canvas" onclick="getInput('ResetCanvas')">
-  </form>
-  <p>Tool: Pen</p>
-  <form>
+    <br>
+    <br>
+
+
+    <label for: "Tool">Tool:</label>
+    <select name="Tool" id="Tool" onchange="getInput('Tool')">
+      <option value="Pen">Pen</option>
+      <option value="Eraser">Eraser</option>
+    </select>
+    <br>
+    <br>
+
+
     <label for: "colour">Colour:</label>
     <input type="color" id="colour" value="#00000" onclick="getInput('colour')">
+    <br>
+    <br>
+
+
     <label for: "thickness">Thickness:</label>
     <input type="number" id="thickness" value="4" onclick="getInput('thickness')">
   </form>
 </head>
+
+<br>
 
 <body>
   <script src="sketch.js"></script>
