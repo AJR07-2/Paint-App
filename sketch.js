@@ -26,6 +26,7 @@ function getInput(input) {
     }
 }
 
+
 /*
 Own Functions
 */
