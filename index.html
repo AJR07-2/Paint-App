@@ -6,18 +6,15 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="utf-8" />
   <form>
-    <br>
     <input type="button" id="everything" value="Load Changes" onclick="getInput('everything')">
+    <input type="button" id="ResetCanvas" value="Reset Canvas" onclick="getInput('ResetCanvas')">
   </form>
   <p>Tool: Pen</p>
   <form>
-    <label for: "colour">Pen Colour</label>
-    <input type="color" id="colour" value="colour" onclick="getInput('colour')">
-    <br>
-    <label for: "thickness">Thickness of pen</label>
-    <input type="number" id="thickness" value="thickness" onclick="getInput('thickness')">
-    <br>
-    <input type="button" id="ResetCanvas" value="ResetCanvas" onclick="getInput('ResetCanvas')">
+    <label for: "colour">Colour:</label>
+    <input type="color" id="colour" value="#00000" onclick="getInput('colour')">
+    <label for: "thickness">Thickness:</label>
+    <input type="number" id="thickness" value="4" onclick="getInput('thickness')">
   </form>
 </head>
 
