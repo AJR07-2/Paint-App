@@ -5,11 +5,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="utf-8" />
-  <form>
+  <form id = "Essential Buttons">
     <input type="button" id="ResetCanvas" value="Reset Canvas" onclick="getInput('ResetCanvas')">
     <br>
     <br>
-
 
     <label for: "Tool">Tool:</label>
     <select name="Tool" id="Tool" onchange="getInput('Tool')">
@@ -18,23 +17,10 @@
     </select>
     <br>
     <br>
+  </form>
 
-
-    <label for: "colour">Colour:</label>
-    <input type="color" id="colour" value="#00000" onclick="getInput('colour')">
-    <br>
-    <br>
-
-
-    <label for: "thickness">Thickness:</label>
-    <input type="number" id="thickness" value="4" onclick="getInput('thickness')">
-    <br>
-    <br>
-
-    <label for: "opacity">Opacity:</label>
-    <input type="number" id="opacity" value="255" onclick="getInput('opacity')">
-    <br>
-    <br>
+  <form id = "Tool Selection">
+    
   </form>
 </head>
 
