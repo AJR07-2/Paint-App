@@ -48,7 +48,7 @@ function reloadDrawn() {
         counter++;
         for (const j of i) {
             if (j[1] == "Eraser") {
-                stroke("white");
+                stroke(255, 255, 255, opacity);
                 noFill();
             }
             vertex(j[0].x, j[0].y);
@@ -166,7 +166,7 @@ function Pen() {
 function Eraser() {
     push();
     defaultSettings();
-    stroke("white");
+    stroke(255, 255, 255, opacity);
     beginShape();
     for (const line of drawingPoints) {
         vertex(line[0].x, line[0].y);
