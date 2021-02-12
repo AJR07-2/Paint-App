@@ -1,7 +1,7 @@
 /*
 Defining variables/Setup
 */
-let colour = "black", thickness = 4, tool = "pen", opacity = 50; //defining the input values
+let colour = "black", thickness = 4, tool = "Pen", opacity = 50; //defining the input values
 let drawingPoints = [], inputValues = ['colour', 'thickness', 'Tool', 'opacity'], drawn = [], colourSettings = [];
 function setup() {
     createCanvas(500, 500);
@@ -102,6 +102,8 @@ function draw() {
     strokeWeight(20);
     canvasBorder();
     reloadDrawn();
-    Pen();
+    if (tool == "Pen") {
+        Pen();
+    }
     LoadChanges();
 }
