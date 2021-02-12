@@ -78,8 +78,8 @@ function LoadChanges() {
     }
 }
 
-function canvasBorder() {
-    fill(255, 255, 255, 0);
+function canvasBorder(opacity) {
+    fill(255, 255, 255, opacity);
     rect(width / 2, height / 2, width, height);
 }
 /*
@@ -159,6 +159,7 @@ Runtime
 */
 function draw() {
     strokeWeight(20);
+    canvasBorder(255);
     reloadDrawn();
     if (tool == "Pen") {
         Pen();
@@ -166,5 +167,5 @@ function draw() {
         Eraser();
     }
     LoadChanges();
-    canvasBorder();
+    canvasBorder(0);
 }
