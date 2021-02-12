@@ -1,0 +1,20 @@
+{
+  "name": "Paint_App",
+  "version": "1.0.0",
+  "description": "Created as part of Computer Studies Year 2 Gradable Task 2 1. https://ajr07-2.github.io/Paint-App/ to view project in action 2. Report bugs in \"Issues\" 3. Have fun!",
+  "main": "sketch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AJR07-2/Paint-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AJR07-2/Paint-App/issues"
+  },
+  "homepage": "https://github.com/AJR07-2/Paint-App#readme"
+}

@@ -2,15 +2,15 @@
 Defining variables/Setup
 */
 let colour = "black", thickness = 4, tool = "Pen", opacity = 50; //defining the input values
-let drawingPoints = [], inputValues = ['Colour', 'Thickness', 'Tool', 'Opacity'], drawn = [], colourSettings = [], toBeRun = [];
+let drawingPoints = [], inputValues = ['Colour', 'Thickness', 'Tool', 'Opacity'], drawn = [], colourSettings = [], toBeRun = [], canvas1;
 let eraserReq = [['Thickness', '10', 'number']], penReq = [['Colour', "#000000", "color"], ['Thickness', "1", "number"], ['Opacity', "255", "number"]];
 function setup() {
     noFill();
-    createCanvas(500, 500);
+    canvas1 = createCanvas(500, 500);
     rectMode(CENTER);
     frameRate(100);
     background(0, 0);
-    changeTool("Pen");
+    changeTool();
 }
 
 /*
@@ -29,9 +29,11 @@ function getInput(input) {
         rect(width / 2, height / 2, width, height);
     } else if (input == 'Tool') {
         tool = document.getElementById(inputValues[2]).value;
-        changeTool(tool);
+        changeTool();
     } else if (input == 'Opacity') {
         opacity = document.getElementById(inputValues[3]).value;
+    } else if (input == 'Download') {
+        saveCanvas(canvas1, "Image", ".png")
     }
 }
 
@@ -96,59 +98,37 @@ function mouseReleased() {
 /*
 Tools
 */
-function changeTool(Tool) {
-    console.log(Tool);
-    const myNode = document.getElementById("Tool Selection");
-    while (myNode.firstChild) {
-        myNode.removeChild(myNode.lastChild);
-        
+function changeTool() {
+    console.log(tool);
+    let toCheck, parentDiv = document.getElementById("Tool Selection");
+    toBeRun = [];
+    while (parentDiv.firstChild) {
+        parentDiv.removeChild(parentDiv.lastChild);
     }
-    if (Tool == "Pen") {
-        toBeRun = [];
-        for (const i of penReq) {
-            toBeRun.push(i[0]);
-            //label
-            let parentDiv = document.getElementById("Tool Selection");
-            let element = document.createElement("label");
-            element.setAttribute("for", i[0]);
-            element.innerHTML = i[0];
-            parentDiv.appendChild(element);
-            //Input
-            let inputElement = document.createElement("input");
-            inputElement.setAttribute("type", i[2]);
-            inputElement.setAttribute("id", i[0]);
-            inputElement.setAttribute("value", i[1]);
-            inputElement.setAttribute("onclick", "getInput(" + i[0] + ")");
-            parentDiv.appendChild(inputElement);
-            //backspace
-            let backSpace = document.createElement("br");
-            parentDiv.appendChild(backSpace);
-            let backSpace1 = document.createElement("br");
-            parentDiv.appendChild(backSpace1);
-        }
-    } else if (Tool == "Eraser") {
-        toBeRun = [];
-        for (const i of eraserReq) {
-            toBeRun.push(i[0]);
-            //label
-            let parentDiv = document.getElementById("Tool Selection");
-            let element = document.createElement("label");
-            element.setAttribute("for", i[0]);
-            element.innerHTML = i[0];
-            parentDiv.appendChild(element);
-            //Input
-            let inputElement = document.createElement("input");
-            inputElement.setAttribute("type", i[2]);
-            inputElement.setAttribute("id", i[0]);
-            inputElement.setAttribute("value", i[1]);
-            inputElement.setAttribute("onclick", "getInput(" + i[0] + ")");
-            parentDiv.appendChild(inputElement);
-            //backspace
-            let backSpace = document.createElement("br");
-            parentDiv.appendChild(backSpace);
-            let backSpace1 = document.createElement("br");
-            parentDiv.appendChild(backSpace1);
-        }
+    if (tool == "Pen") {
+        toCheck = penReq;
+    } else if (tool == "Eraser") {
+        toCheck = eraserReq;
+    }
+    for (const i of toCheck) {
+        toBeRun.push(i[0]);
+        //label
+        let element = document.createElement("label");
+        element.setAttribute("for", i[0]);
+        element.innerHTML = i[0];
+        parentDiv.appendChild(element);
+        //Input
+        let inputElement = document.createElement("input");
+        inputElement.setAttribute("type", i[2]);
+        inputElement.setAttribute("id", i[0]);
+        inputElement.setAttribute("value", i[1]);
+        inputElement.setAttribute("onclick", "getInput(" + i[0] + ")");
+        parentDiv.appendChild(inputElement);
+        //backspace
+        let backSpace = document.createElement("br");
+        parentDiv.appendChild(backSpace);
+        let backSpace1 = document.createElement("br");
+        parentDiv.appendChild(backSpace1);
     }
 }
 
