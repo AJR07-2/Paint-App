@@ -3,7 +3,7 @@ Defining variables/Setup
 */
 let colour = "black", thickness = 4, tool = "Pen", opacity = 50; //defining the input values
 let drawingPoints = [], inputValues = ['Colour', 'Thickness', 'Tool', 'Opacity'], drawn = [], colourSettings = [], toBeRun = [];
-let eraserReq = [['Thickness', '1', 'number'], ['Opacity', "255", "number"]], penReq = [['Colour', "#000000", "color"], ['Thickness', "1", "number"], ['Opacity', "255", "number"]];
+let eraserReq = [['Thickness', '10', 'number']], penReq = [['Colour', "#000000", "color"], ['Thickness', "1", "number"], ['Opacity', "255", "number"]];
 function setup() {
     noFill();
     createCanvas(500, 500);
@@ -48,7 +48,7 @@ function reloadDrawn() {
         counter++;
         for (const j of i) {
             if (j[1] == "Eraser") {
-                stroke(255, 255, 255, opacity);
+                stroke("white");
                 noFill();
             }
             vertex(j[0].x, j[0].y);
@@ -128,7 +128,6 @@ function changeTool(Tool) {
     } else if (Tool == "Eraser") {
         toBeRun = [];
         for (const i of eraserReq) {
-            console.log(i);
             toBeRun.push(i[0]);
             //label
             let parentDiv = document.getElementById("Tool Selection");
@@ -166,7 +165,7 @@ function Pen() {
 function Eraser() {
     push();
     defaultSettings();
-    stroke(255, 255, 255, opacity);
+    stroke("white");
     beginShape();
     for (const line of drawingPoints) {
         vertex(line[0].x, line[0].y);
