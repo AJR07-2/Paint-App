@@ -17,6 +17,7 @@ function setup() {
 HTML-Javascript Inputs
 */
 
+
 function getInput(input) {
     if (input == 'Colour') {
         colour = document.getElementById(inputValues[0]).value;
