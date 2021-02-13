@@ -3,7 +3,8 @@ Defining variables/Setup
 */
 let colour = "black", thickness = 4, tool = "Pen", opacity = 50; //defining the input values
 let drawingPoints = [], inputValues = ['Colour', 'Thickness', 'Tool', 'Opacity'], drawn = [], colourSettings = [], toBeRun = [], canvas1;
-let eraserReq = [['Thickness', 10, 'number']], penReq = [['Colour', "#000000", "color"], ['Thickness', 10 , "number"], ['Opacity', "255", "number"]];
+let eraserReq = [['Thickness', 10, 'number']], penReq = [['Colour', "#000000", "color"], ['Thickness', 10, "number"], ['Opacity', "255", "number"]], LineDrawerReq = penReq;
+let lineDrawerBool = false;
 function setup() {
     noFill();
     canvas1 = createCanvas(500, 500);
@@ -82,6 +83,20 @@ function canvasBorder(opacity) {
     fill(255, 255, 255, opacity);
     rect(width / 2, height / 2, width, height);
 }
+//taken from https://stackoverflow.com/questions/14446447/how-to-read-a-local-text-file
+function readTextFile(file) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4) {
+            if (rawFile.status === 200 || rawFile.status == 0) {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+}
 
 /*
 Keyboard Shortcuts
@@ -96,13 +111,16 @@ window.addEventListener('keydown', (event) => {
             } else if (event.key === 's') {//smaller
                 thickness -= 10;
                 document.getElementById("Thickness").value -= 10;
-            } else if (EventTarget.key === 'd') {//default
+            } else if (event.key === 'd') {//default
                 thickness = 10;
                 document.getElementById("Thickness").value = 10;
                 colour = "#000000";
                 document.getElementById("Colour").value = "#000000";
                 opacity = 255;
                 document.getElementById("Opacity").value = 255;
+            } else if (event.key === 'h') {
+                let README = readTextFile("README.md");
+                window.alert(README);
             }
         }
     } catch (error) {
@@ -115,13 +133,32 @@ window.addEventListener('keydown', (event) => {
 P5 Functions
 */
 function mouseDragged() {
-    drawingPoints.push([createVector(mouseX, mouseY), tool]);
+    if (tool != "Line Drawer") {
+        drawingPoints.push([createVector(mouseX, mouseY), tool]);
+    }
 }
 
 function mouseReleased() {
-    colourSettings.push([colour, thickness, opacity, tool]);
-    drawn.push(drawingPoints);
-    drawingPoints = [];
+    if (tool != "Line Drawer") {
+        colourSettings.push([colour, thickness, opacity, tool]);
+        drawn.push(drawingPoints);
+        drawingPoints = [];
+    }
+}
+
+function mousePressed() {
+    if (tool == "Line Drawer") {
+        if (lineDrawerBool) {
+            lineDrawerBool = false;
+            drawingPoints.push([createVector(mouseX, mouseY), tool, 1]);
+            colourSettings.push([colour, thickness, opacity, tool]);
+            drawn.push(drawingPoints);
+            drawingPoints = [];
+        } else {// first point drawn
+            lineDrawerBool = true;
+            drawingPoints.push([createVector(mouseX, mouseY), tool, 0]);
+        }
+    }
 }
 
 /*
@@ -138,6 +175,8 @@ function changeTool() {
         toCheck = penReq;
     } else if (tool == "Eraser") {
         toCheck = eraserReq;
+    } else if (tool == "Line Drawer") {
+        toCheck = LineDrawerReq;
     }
     for (const i of toCheck) {
         toBeRun.push(i[0]);
@@ -184,12 +223,23 @@ function Eraser() {
     pop();
 }
 
+function LineDrawer() {
+    push();
+    defaultSettings();
+    stroke("black");
+    beginShape();
+    for (const line of drawingPoints) {
+        vertex(line[0].x, line[0].y);
+    }
+    endShape();
+    pop();
+}
+
 /*
 Runtime
 */
 
 function draw() {
-    console.log(thickness);
     strokeWeight(20);
     canvasBorder(255);
     reloadDrawn();
@@ -197,6 +247,8 @@ function draw() {
         Pen();
     } else if (tool == "Eraser") {
         Eraser();
+    } else if (tool == "Line Drawer") {
+        LineDrawer();
     }
     LoadChanges();
     canvasBorder(0);
