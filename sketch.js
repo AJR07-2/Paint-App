@@ -3,7 +3,7 @@ Defining variables/Setup
 */
 let colour = "black", thickness = 4, tool = "Pen", opacity = 50; //defining the input values
 let drawingPoints = [], inputValues = ['Colour', 'Thickness', 'Tool', 'Opacity'], drawn = [], colourSettings = [], toBeRun = [], canvas1;
-let eraserReq = [['Thickness', '10', 'number']], penReq = [['Colour', "#000000", "color"], ['Thickness', "1", "number"], ['Opacity', "255", "number"]];
+let eraserReq = [['Thickness', 10, 'number']], penReq = [['Colour', "#000000", "color"], ['Thickness', 10 , "number"], ['Opacity', "255", "number"]];
 function setup() {
     noFill();
     canvas1 = createCanvas(500, 500);
@@ -82,6 +82,35 @@ function canvasBorder(opacity) {
     fill(255, 255, 255, opacity);
     rect(width / 2, height / 2, width, height);
 }
+
+/*
+Keyboard Shortcuts
+*/
+
+window.addEventListener('keydown', (event) => {
+    try {
+        if (event.ctrlKey) {
+            if (event.key === 't') { //thicker
+                thickness += 10;
+                document.getElementById("Thickness").value -= -10;
+            } else if (event.key === 's') {//smaller
+                thickness -= 10;
+                document.getElementById("Thickness").value -= 10;
+            } else if (EventTarget.key === 'd') {//default
+                thickness = 10;
+                document.getElementById("Thickness").value = 10;
+                colour = "#000000";
+                document.getElementById("Colour").value = "#000000";
+                opacity = 255;
+                document.getElementById("Opacity").value = 255;
+            }
+        }
+    } catch (error) {
+        console.log("Error " + error + " ocurred, please report this at the git repository 'issues' section.");
+    }
+})
+
+
 /*
 P5 Functions
 */
@@ -154,10 +183,13 @@ function Eraser() {
     endShape();
     pop();
 }
+
 /*
 Runtime
 */
+
 function draw() {
+    console.log(thickness);
     strokeWeight(20);
     canvasBorder(255);
     reloadDrawn();
