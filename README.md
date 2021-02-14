@@ -39,3 +39,4 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 1. Reading from a file code (This code is not original)
 (https://stackoverflow.com/questions/14446447/how-to-read-a-local-text-file)
 2. My friends who helped out
+3. Cross html-js sync function

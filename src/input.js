@@ -16,5 +16,9 @@ function getInput(input) {
         saveCanvas(canvas1, "Image", "png")
     } else if (input == 'RandomColour') {
         RandomColour();
+    } else if (input == 'Save') {
+        Save();
+    } else if (input == 'Load') {
+        retrieve();
     }
 }
