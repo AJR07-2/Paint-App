@@ -17,7 +17,7 @@ window.addEventListener('keydown', (event) => {
             } else if (event.key === 'h') {
                 let README = readTextFile("README.md");
                 window.alert(README);
-            } else if (event.key === 'u') {
+            } else if (event.key === 'z') {
                 try {
                     if (drawn[drawn.length - 1] == undefined) throw "Trying to redo nothing eh?";
                     undo.push(drawn[drawn.length - 1]);
@@ -27,7 +27,7 @@ window.addEventListener('keydown', (event) => {
                 } catch (error){
                     console.log("It's either something weird (error: " + error + ") happened, or u were trying to undo nothing")
                 }
-            } else if (event.key === 'z') {
+            } else if (event.key === 'r') {
                 try {
                     if (undo[undo.length - 1] == undefined) throw "Trying to redo nothing eh?";
                     drawn.push(undo[undo.length - 1]);

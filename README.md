@@ -11,8 +11,8 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 2. Control + s: Decrease thickness by 10 (make it *smaller*)
 3. Control + d: Resets all values back to original
 4. Control + h: displays this page
-5. Control + u: undo drawing ("u" not "z" so to not conflict with browser shortcuts)
-6. Control + z: redo drawing
+5. Control + z: undo drawing 
+6. Control + r: redo drawing
 
 ### Tools
 1. Pen- Free hand drawing by dragging mouse
@@ -20,6 +20,7 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 3. Line_Drawer- Draws a line from 2 points Marked out when mouse is clicked(alternate)
 4. Reset_Canvas- Resets the Canvas
 5. Download- Downloads the sketch
+6. Random Colour- Generates a Random Colour
 
 ### Configuration
 1. Tool- Displays different tools
@@ -30,7 +31,7 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 ### Further Improvements
 1. Add more tools such as shape-drawer
 2. Keyboard Shortcuts
-4. Layering
+3. Layering
 
 --Done by Ang Jun Ray at January-March 2021 for CS Project--
 

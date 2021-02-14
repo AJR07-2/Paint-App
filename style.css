@@ -16,3 +16,9 @@ p{
   height: 20px; 
   text-align:center;
 }
+
+#canvas{
+  border-radius: 10px;
+  padding: 10px;
+  border: 10px solid;
+}

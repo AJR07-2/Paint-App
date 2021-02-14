@@ -26,6 +26,15 @@ function changeTool() {
         inputElement.setAttribute("value", i[1]);
         inputElement.setAttribute("onclick", "getInput(" + i[0] + ")");
         parentDiv.appendChild(inputElement);
+        //If its colour, random colour generator
+        if (i[0] == "Colour") {
+            let randomColour = document.createElement("input");
+            randomColour.setAttribute("type", "button");
+            randomColour.setAttribute("value", "Random Colour")
+            randomColour.setAttribute("id", "RandomColour");
+            randomColour.setAttribute("onclick", "getInput('RandomColour')")
+            parentDiv.appendChild(randomColour);
+        }
         //backspace
         let backSpace = document.createElement("br");
         parentDiv.appendChild(backSpace);

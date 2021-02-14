@@ -14,5 +14,7 @@ function getInput(input) {
         opacity = document.getElementById(inputValues[3]).value;
     } else if (input == 'Download') {
         saveCanvas(canvas1, "Image", "png")
+    } else if (input == 'RandomColour') {
+        RandomColour();
     }
 }
