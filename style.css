@@ -7,3 +7,12 @@ label{
   height: 20px; 
   text-align:center;
 }  
+
+p{
+  border-radius: 10px;
+  border: 2px solid #02ff24;
+  background-color: rgb(255, 191, 131);
+  padding: 5px;
+  height: 20px; 
+  text-align:center;
+}

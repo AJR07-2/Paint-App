@@ -11,6 +11,8 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 2. Control + s: Decrease thickness by 10 (make it *smaller*)
 3. Control + d: Resets all values back to original
 4. Control + h: displays this page
+5. Control + u: undo drawing ("u" not "z" so to not conflict with browser shortcuts)
+6. Control + z: redo drawing
 
 ### Tools
 1. Pen- Free hand drawing by dragging mouse
