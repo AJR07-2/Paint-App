@@ -25,16 +25,23 @@ function getInput(input) {
             console.log("Bruh")
         }
     } else if (input == "width") {
-        width = document.getElementById("width").value;
-        canvas1 = createCanvas(width, height);
+        if (confirmExpansion(document.getElementById("width"), width)) {
+            width = document.getElementById("width").value;
+            canvas1 = createCanvas(width, height);
+        }
     } else if (input == "height") {
-        height = document.getElementById("height").value;
-        canvas1 = createCanvas(width, height);
+        console.log("Test")
+        if (confirmExpansion(width, document.getElementById("height"))) {
+            height = document.getElementById("height").value;
+            canvas1 = createCanvas(width, height);
+        }
     } else if (input == "adjustSize") {
-        height = windowHeight;
-        width = windowWidth;
-        canvas1 = createCanvas(width, height);
-        document.getElementById("width").value = width;
-        document.getElementById("height").value = height;
+        if (confirmExpansion(windowWidth, windowHeight)) {
+            height = windowHeight;
+            width = windowWidth;
+            canvas1 = createCanvas(width, height);
+            document.getElementById("width").value = width;
+            document.getElementById("height").value = height;
+        }
     }
 }

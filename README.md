@@ -45,3 +45,4 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 (https://stackoverflow.com/questions/14446447/how-to-read-a-local-text-file)
 2. My friends who helped out
 3. Cross html-js sync function
+4. Brush that creates a line from mouseX, mouseY, previous_location_mouseX + 10(or any modifiable amount), previous_location_mouseY + 10

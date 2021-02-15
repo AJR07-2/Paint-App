@@ -60,3 +60,16 @@ function RandomColour() {
     for (var i = 0; i < 6; i++) colour += letters[Math.floor(Math.random() * 16)];
     document.getElementById("Colour").value = colour;
 }
+
+function confirmExpansion(width1, height1) {
+    if (width1 > 600 || height1 > 600) {
+        let result = prompt('If you expand to a big size, you might lag the website quite badly. Are you sure? (yes if u are)');
+        if (result == "yes") {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return true;
+    }
+}
