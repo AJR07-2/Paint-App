@@ -3,8 +3,9 @@ function reloadDrawn() {
     for (const i of drawn) {
         beginShape();
         noFill();
-        colourToUse = color(drawn[0][1][0]);
-        colourToUse.setAlpha(drawn[0][1][2]);
+        colourToUse = color(i[1][0]);
+        colourToUse.setAlpha(i[1][2]);
+
         strokeWeight(drawn[0][1][1]);
         stroke(colourToUse);
         for (const j of i[0]) {
