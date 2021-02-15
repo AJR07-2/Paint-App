@@ -15,8 +15,7 @@ window.addEventListener('keydown', (event) => {
                 opacity = 255;
                 document.getElementById("Opacity").value = 255;
             } else if (event.key === 'h') {
-                let README = readTextFile("README.md");
-                window.alert(README);
+                readTextFile("README.md");
             } else if (event.key === 'z') {
                 try {
                     if (drawn[drawn.length - 1] == undefined) throw "Trying to redo nothing eh?";
@@ -37,3 +36,6 @@ window.addEventListener('keydown', (event) => {
     }
 })
 
+document.onkeydown = function (h) {
+    return false;
+}

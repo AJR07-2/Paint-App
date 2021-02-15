@@ -23,9 +23,19 @@
     <input type="button" id="ResetCanvas" value="Reset Canvas" onclick="getInput('ResetCanvas')">
     <br>
     <br>
+
+
     <label>Save-Retrieve:</label>
-    <input type="button" id="Save" value="Save" onclick="getInput('Save')">
-    <input type="button" id="Load" value="Load" onclick="getInput('Load')">
+    <input type="button" id="Save" value="Save" onchange="getInput('Save')">
+    <input type="button" id="Load" value="Load" onchange="getInput('Load')">
+    <br>
+    <br>
+
+
+    <label>Canvas:</label>
+    <input type="number" id="width" value="400" onchange="getInput('width')">
+    <input type="number" id="height" value="400" onchange="getInput('height')">
+    <input type="button" id="adjustSize" value = "Adjust Canvas to Fit Window" onclick="getInput('adjustSize')">
     <br>
     <br>
 

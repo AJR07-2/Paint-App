@@ -23,5 +23,17 @@ function getInput(input) {
         if (result == 'yes') {
             retrieve();
         }
+    } else if (input == "width") {
+        width = document.getElementById("width").value;
+        canvas1 = createCanvas(width, height);
+    } else if (input == "height") {
+        height = document.getElementById("height").value;
+        canvas1 = createCanvas(width, height);
+    } else if (input == "adjustSize") {
+        height = windowHeight;
+        width = windowWidth;
+        canvas1 = createCanvas(width, height);
+        document.getElementById("width").value = width;
+        document.getElementById("height").value = height;
     }
 }
