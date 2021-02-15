@@ -5,12 +5,17 @@ function Save() {
     localStorage.setItem('Thickness', thickness);
     localStorage.setItem('Opacity', opacity);
     localStorage.setItem('Tool', tool);
+    localStorage.setItem('width', width);
+    localStorage.setItem('height', height);
 }
 
 function retrieve() {
     const localStorage = window.localStorage;
     try {
         drawn = JSON.parse(localStorage.getItem('Drawn'));
+        height = localStorage.getItem('height');
+        width = localStorage.getItem('width');
+        canvas1 = createCanvas(width, height);
         colour = localStorage.getItem('Colour');
         document.getElementById('Colour').value = colour;
         thickness = localStorage.getItem('Thickness');
