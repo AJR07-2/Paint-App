@@ -10,6 +10,7 @@ function Save() {
 function retrieve() {
     const localStorage = window.localStorage;
     try {
+        
         drawn = JSON.parse(localStorage.getItem('Drawn'));
         colour = localStorage.getItem('Colour');
         document.getElementById('Colour').value = colour;
