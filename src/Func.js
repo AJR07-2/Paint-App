@@ -5,8 +5,7 @@ function reloadDrawn() {
         noFill();
         colourToUse = color(i[1][0]);
         colourToUse.setAlpha(i[1][2]);
-
-        strokeWeight(drawn[0][1][1]);
+        strokeWeight(i[1][1]);
         stroke(colourToUse);
         for (const j of i[0]) {
             if (j[1] == "Eraser") {
