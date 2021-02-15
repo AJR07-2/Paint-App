@@ -35,7 +35,3 @@ window.addEventListener('keydown', (event) => {
         console.log("Error " + error + " ocurred, please report this at the git repository 'issues' section.");
     }
 })
-
-document.onkeydown = function (h) {
-    return false;
-}
