@@ -55,6 +55,7 @@ function readTextFile(file) {
     rawFile.send(null);
 }
 
+
 function RandomColour() {
     let letters = '0123456789ABCDEF'; colour = '#';
     for (var i = 0; i < 6; i++) colour += letters[Math.floor(Math.random() * 16)];
