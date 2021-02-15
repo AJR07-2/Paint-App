@@ -19,6 +19,9 @@ function getInput(input) {
     } else if (input == 'Save') {
         Save();
     } else if (input == 'Load') {
-        retrieve();
+        var result = prompt('Are you sure you want to load the previous sketch? Changes in this current one might be lost!(enter "yes" if u are sure)');
+        if (result == 'yes') {
+            retrieve();
+        }
     }
 }

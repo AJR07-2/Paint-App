@@ -48,7 +48,7 @@ function Pen() {
     defaultSettings();
     beginShape();
     for (const line of drawingPoints) {
-        vertex(line[0].x, line[0].y);
+        vertex(line[0][0], line[0][1]);
     }
     endShape();
     pop();
@@ -60,7 +60,7 @@ function Eraser() {
     stroke("white");
     beginShape();
     for (const line of drawingPoints) {
-        vertex(line[0].x, line[0].y);
+        vertex(line[0][0], line[0][1]);
     }
     endShape();
     pop();
@@ -72,7 +72,7 @@ function LineDrawer() {
     stroke("black");
     beginShape();
     for (const line of drawingPoints) {
-        vertex(line[0].x, line[0].y);
+        vertex(line[0][0], line[0][1]);
     }
     endShape();
     pop();

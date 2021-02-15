@@ -1,28 +1,23 @@
 function mouseDragged() {
     if (tool != "Line Drawer") {
-        drawingPoints.push([createVector(mouseX, mouseY), tool]);
+        drawingPoints.push([[mouseX, mouseY], tool]);
     }
 }
 
 function mouseReleased() {
     if (tool != "Line Drawer") {
-        colourSettings.push([colour, thickness, opacity, tool]);
-        drawn.push(drawingPoints);
+        drawn.push([drawingPoints, [colour, thickness, opacity, tool]]);
         drawingPoints = [];
     }
 }
 
 function mousePressed() {
     if (tool == "Line Drawer") {
+        drawingPoints.push([[mouseX, mouseY], tool]);
         if (lineDrawerBool) {
             lineDrawerBool = false;
-            drawingPoints.push([createVector(mouseX, mouseY), tool, 1]);
-            colourSettings.push([colour, thickness, opacity, tool]);
-            drawn.push(drawingPoints);
+            drawn.push([drawingPoints, [colour, thickness, opacity, tool]]);
             drawingPoints = [];
-        } else {// first point drawn
-            lineDrawerBool = true;
-            drawingPoints.push([createVector(mouseX, mouseY), tool, 0]);
-        }
+        } else { lineDrawerBool = true; }
     }
 }

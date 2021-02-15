@@ -1,20 +1,20 @@
 function reloadDrawn() {
     push();
-    let counter = 0;
     for (const i of drawn) {
         beginShape();
         noFill();
-        colourToUse = color(colourSettings[counter][0]);
-        colourToUse.setAlpha(colourSettings[counter][2]);
-        strokeWeight(colourSettings[counter][1]);
+        colourToUse = color(drawn[0][1][0]);
+        colourToUse.setAlpha(drawn[0][1][2]);
+        strokeWeight(drawn[0][1][1]);
         stroke(colourToUse);
-        counter++;
-        for (const j of i) {
+        for (const j of i[0]) {
             if (j[1] == "Eraser") {
                 stroke("white");
                 noFill();
+            } else if (j[i] == "Line Drawer") {
+                vertex(j[0], j[1]);
             }
-            vertex(j[0].x, j[0].y);
+            vertex(j[0][0], j[0][1]);
         }
         endShape();
     }

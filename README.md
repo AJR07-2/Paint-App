@@ -18,9 +18,12 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 1. Pen- Free hand drawing by dragging mouse
 2. Eraser- Erases wherever mouse is dragged
 3. Line_Drawer- Draws a line from 2 points Marked out when mouse is clicked(alternate)
-4. Reset_Canvas- Resets the Canvas
-5. Download- Downloads the sketch
-6. Random Colour- Generates a Random Colour
+
+### Features
+1. Saving and Loading- Allows you to save a sketch and retrieve it, even thou its the next session
+2. Reset_Canvas- Resets the Canvas
+3. Download- Downloads the sketch
+4. Random Colour- Generates a Random Colour
 
 ### Configuration
 1. Tool- Displays different tools
