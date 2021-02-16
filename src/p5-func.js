@@ -5,14 +5,14 @@ function mouseDragged() {
 }
 
 function mouseReleased() {
-    if (tool != "Line Drawer") {
+    if (tool != NoDrag[0]) {
         drawn.push([drawingPoints, [colour, thickness, opacity, tool]]);
         drawingPoints = [];
     }
 }
 
 function mousePressed() {
-    if (tool == "Line Drawer") {
+    if (tool == NoDrag[0]) {
         drawingPoints.push([[mouseX, mouseY], tool]);
         if (lineDrawerBool) {
             lineDrawerBool = false;
@@ -21,3 +21,4 @@ function mousePressed() {
         } else { lineDrawerBool = true; }
     }
 }
+

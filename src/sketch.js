@@ -8,6 +8,8 @@ function draw() {
         Eraser();
     } else if (tool == "Line Drawer") {
         LineDrawer();
+    } else if (tool == "Highlighter") {
+        Highlighter();
     }
     LoadChanges();
     canvasBorder(0);

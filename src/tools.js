@@ -11,6 +11,9 @@ function changeTool() {
         toCheck = eraserReq;
     } else if (tool == "Line Drawer") {
         toCheck = LineDrawerReq;
+    } else if (tool == "Highlighter") {
+        alert("This tool should be used as minimally as possible, due to the potential lag it creates")
+        toCheck = highlighterReq;
     }
     for (const i of toCheck) {
         toBeRun.push(i[0]);
@@ -75,5 +78,19 @@ function LineDrawer() {
         vertex(line[0][0], line[0][1]);
     }
     endShape();
+    pop();
+}
+
+function Highlighter() {
+    push();
+    defaultSettings();
+    let previousX, previousY;
+    for (const line1 of drawingPoints) {
+        if (previousX != null) {
+            line(previousX + 5, previousY + 5, line1[0][0], line1[0][1]);
+        }
+        previousX = line1[0][0];
+        previousY = line1[0][1];
+    }
     pop();
 }

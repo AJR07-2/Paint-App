@@ -7,12 +7,21 @@ function reloadDrawn() {
         colourToUse.setAlpha(i[1][2]);
         strokeWeight(i[1][1]);
         stroke(colourToUse);
+        let previousX, previousY;
         for (const j of i[0]) {
             if (j[1] == "Eraser") {
                 stroke("white");
                 noFill();
-            } else if (j[i] == "Line Drawer") {
+            } else if (j[1] == "Line Drawer") {
                 vertex(j[0], j[1]);
+            } else if (j[1] == "Highlighter") {
+                endShape();
+                if (previousY != null) {
+                    line(previousX + 5, previousY + 5, j[0][0], j[0][1]);
+                }
+                previousX = j[0][0]; previousY = j[0][1];
+                beginShape();
+                continue;
             }
             vertex(j[0][0], j[0][1]);
         }

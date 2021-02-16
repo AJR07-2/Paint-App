@@ -2,6 +2,9 @@ function getInput(input) {
     if (input == 'Colour') {
         colour = document.getElementById(inputValues[0]).value;
     } else if (input == 'Thickness') {
+        if (tool == "Highlighter") {
+            opacity = 200 / thickness;
+        }
         thickness = document.getElementById(inputValues[1]).value;
     } else if (input == 'ResetCanvas') {
         drawn = [];
