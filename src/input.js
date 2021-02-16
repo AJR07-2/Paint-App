@@ -47,5 +47,5 @@ function getInput(input) {
         }
     } else if (input == "Clear Saved") {
         clearSaved();
-    }
+    } 
 }

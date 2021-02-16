@@ -10,9 +10,40 @@ label{
 
 p{
   border-radius: 10px;
-  border: 2px solid #02ff24;
-  background-color: rgb(255, 191, 131);
+  border: 2px solid #1b02ff;
+  background-color: rgb(229, 243, 29);
   padding: 5px;
   height: 20px; 
   text-align:center;
+}
+
+html{
+  background-color: #74b8f0;
+}
+
+form{
+  background: blue;
+  padding: 10px;
+  border: 5px solid blue;
+  width: 600px;
+  border-radius: 10px;
+}
+
+input{
+  border: 3px solid rgb(76, 0, 255);
+  box-shadow: 2px 2px 5px red;
+}
+
+input:active{
+  border: 10px;
+}
+
+select{
+  border: 3px solid rgb(76, 0, 255);
+  box-shadow: 2px 2px 5px red;
+}
+
+#header{
+  background: rgb(5, 255, 5);
+  padding: 5px;
 }

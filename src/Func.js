@@ -17,7 +17,7 @@ function reloadDrawn() {
             } else if (j[1] == "Highlighter") {
                 endShape();
                 if (previousY != null) {
-                    line(previousX + 5, previousY + 5, j[0][0], j[0][1]);
+                    line(previousX + opacity/2, previousY + opacity/2, j[0][0], j[0][1]);
                 }
                 previousX = j[0][0]; previousY = j[0][1];
                 beginShape();

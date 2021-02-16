@@ -12,7 +12,7 @@ function changeTool() {
     } else if (tool == "Line Drawer") {
         toCheck = LineDrawerReq;
     } else if (tool == "Highlighter") {
-        alert("This tool should be used as minimally as possible, due to the potential lag it creates")
+        alert("This tool should be used as minimally as possible, due to the potential lag it creates. (Note, the thickness automatically adjusts other values (that you are unable to access)")
         toCheck = highlighterReq;
     }
     for (const i of toCheck) {
@@ -87,7 +87,7 @@ function Highlighter() {
     let previousX, previousY;
     for (const line1 of drawingPoints) {
         if (previousX != null) {
-            line(previousX + 5, previousY + 5, line1[0][0], line1[0][1]);
+            line(previousX + opacity/2, previousY + opacity/2, line1[0][0], line1[0][1]);
         }
         previousX = line1[0][0];
         previousY = line1[0][1];

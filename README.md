@@ -18,7 +18,7 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 1. Pen- Free hand drawing by dragging mouse
 2. Eraser- Erases wherever mouse is dragged
 3. Line_Drawer- Draws a line from 2 points Marked out when mouse is clicked(alternate)
-4. Text- still doing 
+4. Highlighter- "Highlights" the text, please note this is not lag-friendly yet
 
 ### Features
 1. Saving and Loading- Allows you to save a sketch and retrieve it, even thou its the next session
