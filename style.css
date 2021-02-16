@@ -31,15 +31,13 @@ form{
 
 input{
   border: 3px solid rgb(76, 0, 255);
+  border-radius: 10px;
   box-shadow: 2px 2px 5px red;
-}
-
-input:active{
-  border: 10px;
 }
 
 select{
   border: 3px solid rgb(76, 0, 255);
+  border-radius: 10px;
   box-shadow: 2px 2px 5px red;
 }
 
