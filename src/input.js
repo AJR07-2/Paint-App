@@ -22,7 +22,6 @@ function getInput(input) {
         var result = prompt('Are you sure you want to load the previous sketch? Changes in this current one might be lost!(enter "yes" if u are sure)');
         if (result == 'yes') {
             retrieve();
-            console.log("Bruh")
         }
     } else if (input == "width") {
         if (confirmExpansion(document.getElementById("width"), width)) {
@@ -43,5 +42,7 @@ function getInput(input) {
             document.getElementById("width").value = width;
             document.getElementById("height").value = height;
         }
+    } else if (input == "Clear Saved") {
+        clearSaved();
     }
 }

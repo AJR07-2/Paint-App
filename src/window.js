@@ -35,3 +35,7 @@ window.addEventListener('keydown', (event) => {
         console.log("Error " + error + " ocurred, please report this at the git repository 'issues' section.");
     }
 })
+
+window.onbeforeunload = function (Warn) {
+    return("Have you saved your sketch?");
+}

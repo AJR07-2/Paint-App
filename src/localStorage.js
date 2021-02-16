@@ -1,30 +1,59 @@
 function Save() {
     const localStorage = window.localStorage;
-    localStorage.setItem('Drawn', JSON.stringify(drawn)); 
-    localStorage.setItem('Colour', colour);
-    localStorage.setItem('Thickness', thickness);
-    localStorage.setItem('Opacity', opacity);
-    localStorage.setItem('Tool', tool);
-    localStorage.setItem('width', width);
-    localStorage.setItem('height', height);
+    let toStore = JSON.stringify([colour, thickness, opacity, tool, width, height, JSON.stringify(drawn)]);
+    let name = prompt("What would you like to save this sketch as?"), Sketches = [];
+    try {
+        Sketches = JSON.parse(localStorage.getItem('sketches'));
+        if (Sketches == null) {
+            throw "";
+        }
+    } catch {
+        Sketches = [];
+    }
+    if (Sketches.indexOf(name) == -1) {
+        Sketches.push(name);
+    }
+    localStorage.setItem('sketches', JSON.stringify(Sketches));
+    localStorage.setItem(name, toStore)
+    alert("(" + name + ") was saved.")
 }
 
 function retrieve() {
-    const localStorage = window.localStorage;
     try {
-        drawn = JSON.parse(localStorage.getItem('Drawn'));
-        height = localStorage.getItem('height');
-        width = localStorage.getItem('width');
-        canvas1 = createCanvas(width, height);
-        colour = localStorage.getItem('Colour');
-        document.getElementById('Colour').value = colour;
-        thickness = localStorage.getItem('Thickness');
-        document.getElementById('Thickness').value = thickness;
-        opacity = localStorage.getItem('Opacity');
-        document.getElementById('Opacity').value = opacity;
-        tool = localStorage.getItem('Tool');
-        document.getElementById('Tool').value = tool;
+        const localStorage = window.localStorage;
+        let sketchesAvailable = JSON.parse(localStorage.getItem('sketches')), sketchChosen;
+        try {
+            sketchChosen = prompt("Which sketch would you want to retrieve? Here are the stored sketches so far:" + sketchesAvailable);
+        } catch {
+            alert("Retrieving cancelled")
+        }
+        console.log(sketchChosen, sketchesAvailable);
+        if (sketchesAvailable.indexOf(sketchChosen) == -1) {
+            prompt("That's an invalid sketch. (This is case-sensitive)")
+            return null;
+        }
+        try {
+            let Stored = JSON.parse(localStorage.getItem(sketchChosen));
+            colour = Stored[0];
+            thickness = Stored[1];
+            opacity = Stored[2];
+            tool = Stored[3];
+            width = Stored[4];
+            height = Stored[5];
+            drawn = JSON.parse(Stored[6]);
+            syncJStoHTML();
+        } catch (error) {
+            console.log(error);
+        }
     } catch (error) {
-        console.log(error + " , probably because u haven't saved anything before")
+        console.log(error + " happened, please raise this as an issue on github issues.")
+    }
+}
+
+function clearSaved() {
+    localStorage = window.localStorage;
+    prompt("Are you sure? All saved sketches will be removed (yes if u are)");
+    if (prompt == "Yes") {
+        localStorage.clear("sketches");
     }
 }

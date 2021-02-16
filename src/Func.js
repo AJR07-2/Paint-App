@@ -73,3 +73,12 @@ function confirmExpansion(width1, height1) {
         return true;
     }
 }
+
+function syncJStoHTML() {
+    document.getElementById("Colour").value = colour;
+    document.getElementById("Tool").value = tool;
+    document.getElementById("Opacity").value = opacity;
+    document.getElementById("Thickness").value = thickness;
+    document.getElementById("width").value = width;
+    document.getElementById("height").value = height;
+}
