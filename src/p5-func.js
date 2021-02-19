@@ -1,4 +1,4 @@
-let lineDrawerBool = false;
+let lineDrawerBool = false, lineStartX = 0, lineStartY = 0;
 function mouseDragged() {
     if (tool != NoDrag[0]) {
         drawingPoints.push([[mouseX, mouseY], tool]);
@@ -8,27 +8,20 @@ function mouseDragged() {
     }
 }
 
+function mousePressed() {
+    if (tool == NoDrag[0]) {
+        lineStartX = mouseX;
+        lineStartY = mouseY;
+    }
+}
+
 function mouseReleased() {
     if (tool != NoDrag[0]) {
         drawn.push([drawingPoints, [colour, thickness, opacity, tool]]);
         drawingPoints = [];
     } else if (tool == NoDrag[0]) {
-        drawingPoints.push([[mouseX, mouseY], tool]);
+        drawingPoints.push([[lineStartX, lineStartY], tool]);
         drawn.push([drawingPoints, [colour, thickness, opacity, tool]]);
-        console.log("Test")
         //drawingPoints = [];
     }
 }
-/*
-function mousePressed() {
-    if (tool == NoDrag[0]) {
-        drawingPoints.push([[mouseX, mouseY], tool]);
-        if (lineDrawerBool) {
-            lineDrawerBool = false;
-            drawn.push([drawingPoints, [colour, thickness, opacity, tool]]);
-            drawingPoints = [];
-        } else { lineDrawerBool = true; }
-    }
-}
-
-*/

@@ -75,13 +75,10 @@ function LineDrawer() {
     push();
     defaultSettings();
     stroke("black");
-    beginShape();
     try {
-        vertex(drawingPoints[0][0][0], drawingPoints[0][0][1]);
-        vertex(mouseX, mouseY);
+        line(drawingPoints[0][0][0], drawingPoints[0][0][1], lineStartX, lineStartY);
     } catch {//do nothing
     }
-    endShape();
     pop();
 }
 

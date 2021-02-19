@@ -15,7 +15,15 @@ function reloadDrawn() {
             } else if (j[1] == "Highlighter") {
                 endShape();
                 if (previousY != null) {
-                    line(previousX + opacity/2, previousY + opacity/2, j[0][0], j[0][1]);
+                    line(previousX + i[1][2]/2, previousY + i[1][2]/2, j[0][0], j[0][1]);
+                }
+                previousX = j[0][0]; previousY = j[0][1];
+                beginShape();
+                continue;
+            } else if (j[i] == "Line Drawer") {
+                endShape();
+                if (previousY != null) {
+                    line(previousX, previousY, j[0][0], j[0][1]);
                 }
                 previousX = j[0][0]; previousY = j[0][1];
                 beginShape();
@@ -30,9 +38,11 @@ function reloadDrawn() {
 
 function defaultSettings() {
     noFill();
+    let preColour = colour;
     colour = color(colour);
     colour.setAlpha(opacity);
     stroke(colour);
+    colour = preColour;
     strokeWeight(thickness);
 }
 
@@ -76,10 +86,10 @@ function confirmExpansion(width1, height1) {
 }
 
 function syncJStoHTML() {
-    document.getElementById("Colour").value = colour;
-    document.getElementById("Tool").value = tool;
-    document.getElementById("Opacity").value = opacity;
-    document.getElementById("Thickness").value = thickness;
+    document.getElementById("colour").value = colour;
+    document.getElementById("tool").value = tool;
+    document.getElementById("opacity").value = opacity;
+    document.getElementById("thickness").value = thickness;
     document.getElementById("width").value = width;
     document.getElementById("height").value = height;
 }

@@ -15,7 +15,8 @@ function Save() {
     }
     localStorage.setItem('sketches', JSON.stringify(Sketches));
     localStorage.setItem(name, toStore)
-    alert("(" + name + ") was saved.")
+    alert("(" + name + ") was saved.");
+    console.log(drawn);
 }
 
 function retrieve() {
@@ -23,13 +24,14 @@ function retrieve() {
         const localStorage = window.localStorage;
         let sketchesAvailable = JSON.parse(localStorage.getItem('sketches')), sketchChosen;
         try {
-            sketchChosen = prompt("Which sketch would you want to retrieve? Here are the stored sketches so far:" + sketchesAvailable);
+            let string = "", counter = 0;
+            for (const i of sketchesAvailable) { counter++; string += counter + ". " + i + "\n";}
+            sketchChosen = prompt("Which sketch would you want to retrieve? Here are the stored sketches so far: " + string);
         } catch {
             alert("Retrieving cancelled")
         }
-        console.log(sketchChosen, sketchesAvailable);
         if (sketchesAvailable.indexOf(sketchChosen) == -1) {
-            prompt("That's an invalid sketch. (This is case-sensitive)")
+            alert("That's an invalid sketch. (This is case-sensitive)")
             return null;
         }
         try {
