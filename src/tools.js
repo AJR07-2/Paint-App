@@ -1,7 +1,5 @@
 function changeTool() {
-    console.log(tool);
     let toCheck, parentDiv = document.getElementById("Tool Selection");
-    toBeRun = [];
     while (parentDiv.firstChild) {
         parentDiv.removeChild(parentDiv.lastChild);
     }
@@ -14,28 +12,32 @@ function changeTool() {
     } else if (tool == "Highlighter") {
         alert("This tool should be used as minimally as possible, due to the potential lag it creates. (Note, the thickness automatically adjusts other values (that you are unable to access)")
         toCheck = highlighterReq;
+        opacity = 15;
     }
+    input = [];
     for (const i of toCheck) {
-        toBeRun.push(i[0]);
+        input.push(i[0]);
         //label
         let element = document.createElement("label");
         element.setAttribute("for", i[0]);
         element.innerHTML = i[0];
         parentDiv.appendChild(element);
         //Input
+        let setupValues = ["id", "value", "type"], counter = 0;
         let inputElement = document.createElement("input");
-        inputElement.setAttribute("type", i[2]);
-        inputElement.setAttribute("id", i[0]);
-        inputElement.setAttribute("value", i[1]);
-        inputElement.setAttribute("onclick", "getInput(" + i[0] + ")");
+        for (const j of setupValues) {
+            inputElement.setAttribute(j, i[counter]);
+            counter++;
+        }
+        inputElement.setAttribute("onclick", "getInput('" + i[0] + "')");
         parentDiv.appendChild(inputElement);
         //If its colour, random colour generator
-        if (i[0] == "Colour") {
+        if (i[0] == "colour") {
             let randomColour = document.createElement("input");
             randomColour.setAttribute("type", "button");
             randomColour.setAttribute("value", "Random Colour")
-            randomColour.setAttribute("id", "RandomColour");
-            randomColour.setAttribute("onclick", "getInput('RandomColour')")
+            randomColour.setAttribute("id", "randomColour");
+            randomColour.setAttribute("onclick", "getInput('randomColour')")
             parentDiv.appendChild(randomColour);
         }
         //backspace
@@ -74,8 +76,10 @@ function LineDrawer() {
     defaultSettings();
     stroke("black");
     beginShape();
-    for (const line of drawingPoints) {
-        vertex(line[0][0], line[0][1]);
+    try {
+        vertex(drawingPoints[0][0][0], drawingPoints[0][0][1]);
+        vertex(mouseX, mouseY);
+    } catch {//do nothing
     }
     endShape();
     pop();

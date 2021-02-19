@@ -15,21 +15,21 @@
   <link rel="stylesheet" href="style.css">
   <meta charset="utf-8" />
 
-  <p>
+  <p id = "Help">
     For help to use this drawing tool: please enter the keyboard shortcut of control+h
   </p>
   <label id="header">Settings/Configuration</label>
   <form id = "Essential Buttons">
-    <input type="button" id="Download" value="Download" onclick="getInput('Download')">
-    <input type="button" id="ResetCanvas" value="Reset Canvas" onclick="getInput('ResetCanvas')">
+    <input type="button" id="download" value="Download" onclick="getInput('download')">
+    <input type="button" id="resetCanvas" value="Reset Canvas" onclick="getInput('resetCanvas')">
     <br>
     <br>
 
 
-    <label>Save&Retrieve:</label>
-    <input type="button" id="Save" value="Save" onclick="getInput('Save')">
-    <input type="button" id="Retrieve" value="Retrieve" onclick="getInput('Load')">
-    <input type="button" id="Clear Saved" value="Clear Saved" onclick="getInput('Clear Saved')">
+    <label>Save and Retrieve:</label>
+    <input type="button" id="save" value="Save" onclick="getInput('save')">
+    <input type="button" id="retrieve" value="Retrieve" onclick="getInput('load')">
+    <input type="button" id="clearSaved" value="Clear Saved" onclick="getInput('clearSaved')">
     <br>
     <br>
 
@@ -42,7 +42,7 @@
     <br>
 
     <label for: "Tool">Tool:</label>
-    <select name="Tool" id="Tool" onchange="getInput('Tool')">
+    <select name="Tool" id="tool" onchange="getInput('tool')">
       <option value="Pen">Pen</option>
       <option value="Eraser">Eraser</option>
       <option value="Line Drawer">Line Drawer</option>
@@ -56,7 +56,7 @@
   <label id="header">Tool Properties</label>
   <br>
 
-  <form id = "Tool Selection">
+  <form id="Tool Selection">
     
   </form>
 </head>

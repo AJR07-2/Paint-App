@@ -1,6 +1,23 @@
-let colour = "black", thickness = 4, tool = "Pen", opacity = 50, width = 400, height = 400, LagFactor = 0, frames = 0; //defining the input values
-let drawingPoints = [], inputValues = ['Colour', 'Thickness', 'Tool', 'Opacity', 'width', 'height'], drawn = [], toBeRun = [], canvas1, undo = [];
-let eraserReq = [['Thickness', 10, 'number']], penReq = [['Colour', "#000000", "color"], ['Thickness', 10, "number"], ['Opacity', "255", "number"]], LineDrawerReq = penReq;
-let highlighterReq = [['Colour', "#000000", "color"], ['Thickness', 10, "number"]];
-let lineDrawerBool = false;
-let NoDrag  = ["Line Drawer"]
+//Input Values
+let colour = "black";
+let thickness = 10;
+let tool = "Pen";
+let opacity = 255;
+let width = 400;
+let height = 400;
+let refreshValues = ['colour', 'thickness', 'tool', 'opacity', 'width', 'height']
+
+//Canvas drawing points array
+let canvas1;
+let drawingPoints = [], drawn = [], undo = [];
+let NoDrag = ["Line Drawer"]
+let input = ["colour", "thickness", "opacity", "height", "width"]
+
+
+
+//Tool Properties Requirements
+let Sections = [['colour', "#000000", "color"], ['thickness', 10, "number"], ['opacity', "255", "number"]];
+let highlighterReq = [Sections[0], Sections[1]];
+let eraserReq = [Sections[1]];
+let penReq = [Sections[0], Sections[1], Sections[2]];
+let LineDrawerReq = [Sections[0], Sections[1], Sections[2]];

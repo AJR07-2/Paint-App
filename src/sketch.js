@@ -1,4 +1,5 @@
 function draw() {
+    loadChanges();
     strokeWeight(20);
     canvasBorder(255);
     reloadDrawn();
@@ -11,6 +12,5 @@ function draw() {
     } else if (tool == "Highlighter") {
         Highlighter();
     }
-    LoadChanges();
     canvasBorder(0);
 }

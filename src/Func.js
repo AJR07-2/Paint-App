@@ -12,8 +12,6 @@ function reloadDrawn() {
             if (j[1] == "Eraser") {
                 stroke("white");
                 noFill();
-            } else if (j[1] == "Line Drawer") {
-                vertex(j[0], j[1]);
             } else if (j[1] == "Highlighter") {
                 endShape();
                 if (previousY != null) {
@@ -36,12 +34,6 @@ function defaultSettings() {
     colour.setAlpha(opacity);
     stroke(colour);
     strokeWeight(thickness);
-}
-
-function LoadChanges() {
-    for (const i of toBeRun) {
-        getInput(i);
-    }
 }
 
 function canvasBorder(opacity) {
@@ -67,7 +59,7 @@ function readTextFile(file) {
 function RandomColour() {
     let letters = '0123456789ABCDEF'; colour = '#';
     for (var i = 0; i < 6; i++) colour += letters[Math.floor(Math.random() * 16)];
-    document.getElementById("Colour").value = colour;
+    document.getElementById("colour").value = colour;
 }
 
 function confirmExpansion(width1, height1) {
@@ -90,4 +82,10 @@ function syncJStoHTML() {
     document.getElementById("Thickness").value = thickness;
     document.getElementById("width").value = width;
     document.getElementById("height").value = height;
+}
+
+function loadChanges() {
+    for (const i of input) {
+        getInput(i);
+    }
 }
