@@ -22,6 +22,6 @@ function mouseReleased() {
     } else if (tool == NoDrag[0]) {
         drawingPoints.push([[lineStartX, lineStartY], tool]);
         drawn.push([drawingPoints, [colour, thickness, opacity, tool]]);
-        //drawingPoints = [];
+        drawingPoints = [];
     }
 }
