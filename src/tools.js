@@ -3,17 +3,14 @@ function changeTool() {
     while (parentDiv.firstChild) {
         parentDiv.removeChild(parentDiv.lastChild);
     }
-    if (tool == "Pen") {
-        toCheck = penReq;
-    } else if (tool == "Eraser") {
-        toCheck = eraserReq;
-    } else if (tool == "Line Drawer") {
-        toCheck = LineDrawerReq;
-    } else if (tool == "Highlighter") {
+    if (tool == "Pen") { toCheck = penReq; }
+    else if (tool == "Eraser") { toCheck = eraserReq; }
+    else if (tool == "Line Drawer") { toCheck = LineDrawerReq; }
+    else if (tool == "Highlighter") {
         alert("This tool should be used as minimally as possible, due to the potential lag it creates. (Note, the thickness automatically adjusts other values (that you are unable to access)")
         toCheck = highlighterReq;
-        opacity = 15;
-    }
+        opacity = 15;}
+    else if (tool == "Rect Drawer") {toCheck = rectDrawerReq}
     input = [];
     for (const i of toCheck) {
         input.push(i[0]);
@@ -92,6 +89,17 @@ function Highlighter() {
         }
         previousX = line1[0][0];
         previousY = line1[0][1];
+    }
+    pop();
+}
+
+function rectDrawer() {
+    push();
+    defaultSettings();
+    stroke("black");
+    try {
+        rect((lineStartX + drawingPoints[0][0][0])/2, (lineStartY + drawingPoints[0][0][1])/2, lineStartX - drawingPoints[0][0][0], lineStartY  - drawingPoints[0][0][1]);
+    } catch {//do nothing
     }
     pop();
 }

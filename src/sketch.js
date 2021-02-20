@@ -11,6 +11,8 @@ function draw() {
         LineDrawer();
     } else if (tool == "Highlighter") {
         Highlighter();
+    } else if (tool == "Rect Drawer") {
+        rectDrawer();
     }
     canvasBorder(0);
 }

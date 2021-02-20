@@ -28,6 +28,14 @@ function reloadDrawn() {
                 previousX = j[0][0]; previousY = j[0][1];
                 beginShape();
                 continue;
+            } else if (j[1] == "Rect Drawer") {
+                beginShape();//DON'T USE LINE START 
+                if (previousY != null) {
+                    rect((previousX + j[0][0] / 2), (previousY + j[0][1]) / 2, previousX - j[0][0], previousY - j[0][1]);
+                }
+                previousX = j[0][0]; previousY = j[0][1];
+                endShape();
+                continue;
             }
             vertex(j[0][0], j[0][1]);
         }

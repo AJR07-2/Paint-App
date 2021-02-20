@@ -43,10 +43,15 @@
 
     <label for: "Tool">Tool:</label>
     <select name="Tool" id="tool" onchange="getInput('tool')">
-      <option value="Pen">Pen</option>
-      <option value="Eraser">Eraser</option>
-      <option value="Line Drawer">Line Drawer</option>
-      <option value="Highlighter">Highlighter</option>
+      <optgroup label="Freehand">
+        <option value="Pen">Pen</option>
+        <option value="Eraser">Eraser</option>
+        <option value="Highlighter">Highlighter</option>
+      </optgroup>
+      <optgroup label="Shape Drawer">
+        <option value="Line Drawer">Line</option>
+        <option value="Rect Drawer">Rectangle</option>
+      </optgroup>
     </select>
     <br>
     <br>
