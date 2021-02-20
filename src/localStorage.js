@@ -16,7 +16,6 @@ function Save() {
     localStorage.setItem('sketches', JSON.stringify(Sketches));
     localStorage.setItem(name, toStore)
     alert("(" + name + ") was saved.");
-    console.log(drawn);
 }
 
 function retrieve() {

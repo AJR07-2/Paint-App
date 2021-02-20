@@ -47,4 +47,20 @@ function getInput(input) {
     } else if (input == "clearSaved") {
         clearSaved();
     }
+    //For the shape drawing input
+    else if (input == "fill") {
+        fillOrNot = document.getElementById("fill").checked;
+    } else if (input == "colour fill") {
+        colourFill = document.getElementById("colour fill").value;
+    } else if (input == "opacity fill") {
+        opacityFill = document.getElementById("opacity fill").value;
+    } else if (input == "border") {
+        border = document.getElementById("border").checked;
+    } else if (input == "colour border") {
+        colourBorder = document.getElementById("colour border").value;
+    } else if (input == "opacity border") {
+        opacityBorder = document.getElementById("opacity border").value;
+    } else if (input == "corner radius") {
+        cornerRadius = document.getElementById("corner radius").value;
+    }
 }

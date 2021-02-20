@@ -1,7 +1,11 @@
 function reloadDrawn() {
     push();
     for (const i of drawn) {
+        console.log(i);
         beginShape();
+        if (i[0][0][1] == "Rect Drawer") {
+            
+        }
         noFill();
         colourToUse = color(i[1][0]);
         colourToUse.setAlpha(i[1][2]);
@@ -9,13 +13,14 @@ function reloadDrawn() {
         stroke(colourToUse);
         let previousX, previousY;
         for (const j of i[0]) {
+            //exclusive configs for each tool when reloading drawn
             if (j[1] == "Eraser") {
                 stroke("white");
                 noFill();
             } else if (j[1] == "Highlighter") {
                 endShape();
                 if (previousY != null) {
-                    line(previousX + i[1][2]/2, previousY + i[1][2]/2, j[0][0], j[0][1]);
+                    line(previousX + i[1][2] / 2, previousY + i[1][2] / 2, j[0][0], j[0][1]);
                 }
                 previousX = j[0][0]; previousY = j[0][1];
                 beginShape();
@@ -29,9 +34,9 @@ function reloadDrawn() {
                 beginShape();
                 continue;
             } else if (j[1] == "Rect Drawer") {
-                beginShape();//DON'T USE LINE START 
+                beginShape();
                 if (previousY != null) {
-                    rect((previousX + j[0][0] / 2), (previousY + j[0][1]) / 2, previousX - j[0][0], previousY - j[0][1]);
+                    rect((previousX + j[0][0]) / 2, (previousY + j[0][1]) / 2, previousX - j[0][0], previousY - j[0][1]);
                 }
                 previousX = j[0][0]; previousY = j[0][1];
                 endShape();
@@ -52,6 +57,28 @@ function defaultSettings() {
     stroke(colour);
     colour = preColour;
     strokeWeight(thickness);
+}
+
+function ShapeDrawerSettings() {
+    if (!fillOrNot) {
+        noFill();
+    } else {
+        let preColour = colourFill;
+        colourFill = color(colourFill);
+        colourFill.setAlpha(opacityFill);
+        fill(colourFill);
+        colourFill = preColour;
+    }
+    if (!border) {
+        noStroke();
+    } else {
+        let preBorder = colourBorder;
+        colourBorder = color(colourBorder);
+        colourBorder.setAlpha(opacityBorder);
+        stroke(opacityBorder);
+        strokeWeight(thickness);
+        colourBorder = preBorder
+    }
 }
 
 function canvasBorder(opacity) {
