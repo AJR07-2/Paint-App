@@ -20,10 +20,10 @@ let fillOrNot, colourFill, opacityFill, border, colourBorder, opacityBorder, cor
 let Sections = [['colour', "#000000", "color"],
 ['thickness', 10, "number"],
 ['opacity', "255", "number"], // ^Default 3
-["fill", "", "checkbox"], //For shape drawing
+["fill", "false", "checkbox"], //For shape drawing
 ['colour fill', "#000000", "color"],
 ['opacity fill', '255', 'number'],
-['border', "", "checkbox"],
+['border', "true", "checkbox"],
 ['colour border', "#000000", "color"],
 ['opacity border', '255', 'number'],
 ['corner radius', '0', 'number']

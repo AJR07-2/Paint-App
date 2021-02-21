@@ -1,16 +1,36 @@
 function reloadDrawn() {
     push();
     for (const i of drawn) {
-        console.log(i);
         beginShape();
-        if (i[0][0][1] == "Rect Drawer") {
-            
+        try {
+            if (i[0][0][1] == "Rect Drawer") {
+                if (i[1][0] == false) {
+                    noFill();
+                } else {
+                    let preColour = i[1][1];
+                    i[1][1] = color(i[1][1]);
+                    i[1][1].setAlpha(i[1][2]);
+                    fill(i[1][1]);
+                    i[1][1] = preColour;
+                }
+                if (i[1][3] == false) {
+                    noStroke();
+                } else {
+                    let preBorder = i[1][4];
+                    i[1][4] = color(i[1][4]);
+                    i[1][4].setAlpha(i[1][5]);
+                    stroke(i[1][4]);
+                    strokeWeight(i[1][6]);
+                    i[1][4] = preBorder;
+                }
+            }
+        } catch {
+            noFill();
+            colourToUse = color(i[1][0]);
+            colourToUse.setAlpha(i[1][2]);
+            strokeWeight(i[1][1]);
+            stroke(colourToUse);
         }
-        noFill();
-        colourToUse = color(i[1][0]);
-        colourToUse.setAlpha(i[1][2]);
-        strokeWeight(i[1][1]);
-        stroke(colourToUse);
         let previousX, previousY;
         for (const j of i[0]) {
             //exclusive configs for each tool when reloading drawn
@@ -60,7 +80,7 @@ function defaultSettings() {
 }
 
 function ShapeDrawerSettings() {
-    if (!fillOrNot) {
+    if (fillOrNot == false) {
         noFill();
     } else {
         let preColour = colourFill;
@@ -69,13 +89,13 @@ function ShapeDrawerSettings() {
         fill(colourFill);
         colourFill = preColour;
     }
-    if (!border) {
+    if (border == false) {
         noStroke();
     } else {
         let preBorder = colourBorder;
         colourBorder = color(colourBorder);
         colourBorder.setAlpha(opacityBorder);
-        stroke(opacityBorder);
+        stroke(colourBorder);
         strokeWeight(thickness);
         colourBorder = preBorder
     }

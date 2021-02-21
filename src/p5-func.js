@@ -21,7 +21,7 @@ function mouseReleased() {
         drawingPoints = [];
     } else if (tool == NoDrag[0] || tool == NoDrag[1]) {
         drawingPoints.push([[lineStartX, lineStartY], tool]);
-        drawn.push([drawingPoints, [fillOrNot, colourFill, opacityFill, border, colourBorder, opacityBorder, thickness]]);
+        drawn.push([drawingPoints, [fillOrNot, colourFill, opacityFill, border, colourBorder, opacityBorder, thickness, cornerRadius]]);
         drawingPoints = [];
     }
 }
