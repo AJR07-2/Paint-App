@@ -23,6 +23,8 @@ function reloadDrawn() {
                     strokeWeight(i[1][6]);
                     i[1][4] = preBorder;
                 }
+            } else {
+                throw "."
             }
         } catch {
             noFill();
