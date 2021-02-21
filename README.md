@@ -13,12 +13,16 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 4. Control + h: displays this page
 5. Control + z: undo drawing 
 6. Control + r: redo drawing
+7. Control + c: New Random Colour
 
 ### Tools
+--FreeHand---
 1. Pen- Free hand drawing by dragging mouse
 2. Eraser- Erases wherever mouse is dragged
-3. Line_Drawer- Draws a line from 2 points Marked out when mouse is clicked(alternate)
-4. Highlighter- "Highlights" the text, please note this is not lag-friendly yet
+3. Highlighter- "Highlights" the text, please note this is not lag-friendly yet
+--Shape Drawers--
+4. Line_Drawer- Draws a line when mouse is dragged
+5. Rect_Drawer- Draws a rect when mouse is dragged (please remember to toggle the fill and border)
 
 ### Features
 1. Saving and Loading- Allows you to save a sketch and retrieve it, even thou its the next session
@@ -44,5 +48,3 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 1. Reading from a file code (This code is not original)
 (https://stackoverflow.com/questions/14446447/how-to-read-a-local-text-file)
 2. My friends who helped out
-3. Cross html-js sync function
-4. Brush that creates a line from mouseX, mouseY, previous_location_mouseX + 10(or any modifiable amount), previous_location_mouseY + 10
