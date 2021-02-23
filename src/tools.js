@@ -96,8 +96,10 @@ function rectDrawer() {
     push();
     ShapeDrawerSettings();
     try {
-        rect((lineStartX + drawingPoints[0][0][0])/2, (lineStartY + drawingPoints[0][0][1])/2, lineStartX - drawingPoints[0][0][0], lineStartY  - drawingPoints[0][0][1]);
+        rect((lineStartX + drawingPoints[0][0][0])/2, (lineStartY + drawingPoints[0][0][1])/2, lineStartX - drawingPoints[0][0][0], lineStartY  - drawingPoints[0][0][1], cornerRadius);
     } catch {//do nothing
     }
+
+    
     pop();
 }

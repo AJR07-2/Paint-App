@@ -71,6 +71,7 @@ function reloadDrawn() {
     pop();
 }
 
+
 function defaultSettings() {
     noFill();
     let preColour = colour;
