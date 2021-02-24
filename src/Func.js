@@ -157,3 +157,21 @@ function loadChanges() {
         getInput(i);
     }
 }
+
+function cutOutOfFrame() {
+    if (prompt("Are you sure? You might lose the strokes where some parts are outside, but not all! Please enter 'Yes' if you  are. (Consider saving first just in case)") != "Yes") {
+        return true;
+    }
+    let counter = 0;
+    for (let i of drawn) {
+        counter++;
+        for (let j of i[0]) {
+            console.log(j[0[0]]);
+            if (j[0][0] > width || j[0][0] < 0 || j[0][1] < 0 || j[0][1] > height) {
+                console.log(drawn[counter]);
+                drawn.splice(counter, counter+1);
+                counter--;
+            }
+        }
+    }
+}

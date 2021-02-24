@@ -13,7 +13,7 @@ p{
   border: 2px solid #1b02ff;
   background-color: rgb(229, 243, 29);
   padding: 5px;
-  height: 20px; 
+  height: 40px; 
   text-align:center;
 }
 
@@ -45,3 +45,19 @@ select{
   background: rgb(5, 255, 5);
   padding: 5px;
 }
+/*
+canvas:hover {
+  cursor: none
+}
+
+#size-indicator {
+  border-radius: 50%;
+  border: 1px solid black;
+  position: absolute;
+  pointer-events: none;
+  width: width;
+  height: height;
+  top: mouseY - size/2;
+  left: mouseX - size/2;
+}
+*/

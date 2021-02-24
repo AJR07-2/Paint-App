@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
   <script src="src/variable.js"></script>
   <script src="src/setup.js"></script>
@@ -15,9 +18,26 @@
   <link rel="stylesheet" href="style.css">
   <meta charset="utf-8" />
 
+
+
   <p id = "Help">
     For help to use this drawing tool: please enter the keyboard shortcut of control+h
+    <br> For code please use https://github.com/AJR07-2/Paint-App to access
   </p>
+
+  <label id="header">Lag Management</label>
+  <form id ="Lag Management">
+    <br>
+    <label>Frame Rate:</label>
+    <input type="number" value = "60" id= "Frame Rate" onchange="getInput('Frame Rate')">
+    <br>
+    <br>
+    <input type="button" onclick="getInput('cutOutOfFrame')" value = "Cut out-of-frame drawing">
+  </form>
+
+  <br>
+  <br>
+
   <label id="header">Settings/Configuration</label>
   <form id = "Essential Buttons">
     <input type="button" id="download" value="Download" onclick="getInput('download')">
@@ -72,7 +92,7 @@
   <label id="header">Canvas</label>
   <br>
   <br>
-  <script src="src/sketch.js"></script>
+  <script src="src/sketch.js" id= "size-indicator"></script>
 </body>
 
 </html>
