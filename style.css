@@ -45,22 +45,11 @@ select{
   background: rgb(5, 255, 5);
   padding: 5px;
 }
-/*
-canvas:hover {
-  cursor: none
-}
 
-#size-indicator {
-  border-radius: 50%;
-  border: 1px solid black;
-  position: absolute;
-  pointer-events: none;
-  width: width;
-  height: height;
-  top: mouseY - size/2;
-  left: mouseX - size/2;
+canvas:hover {
+  cursor: crosshair
+  
 }
-*/
 
 canvas{
   border: black 10px solid;
