@@ -1,4 +1,4 @@
-function Save() {
+function Store() {
     const localStorage = window.localStorage;
     let toStore = JSON.stringify([colour, thickness, opacity, tool, width, height, JSON.stringify(drawn)]);
     let name = prompt("What would you like to save this sketch as?"), Sketches = [];

@@ -61,3 +61,8 @@ canvas:hover {
   left: mouseX - size/2;
 }
 */
+
+canvas{
+  border: black 10px solid;
+  border-radius: 10px;
+}

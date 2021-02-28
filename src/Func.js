@@ -106,6 +106,7 @@ function ShapeDrawerSettings() {
 
 function canvasBorder(opacity) {
     fill(255, 255, 255, opacity);
+    noStroke();
     rect(width / 2, height / 2, width, height);
 }
 

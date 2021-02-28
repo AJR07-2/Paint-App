@@ -7,17 +7,17 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 ## Documentation
 
 ### Keyboard Shortcuts
-1. Control + t: Increase thickness by 10
-2. Control + s: Decrease thickness by 10 (make it *smaller*)
-3. Control + d: Resets all values back to original
-4. Control + h: displays this page
-5. Control + z: undo drawing 
-6. Control + r: redo drawing
-7. Control + c: New Random Colour
+1. &#8592; : Increase thickness by 10
+2. &#8594; : Decrease thickness by 10 (make it *smaller*)
+3. <kbd>d</kbd>: Resets all values back to default
+4. <kbd>h</kbd>: Displays "Help" page
+5. <kbd>u</kbd>: undo drawing 
+6. <kbd>r</kbd>: redo drawing
+7. <kbd>c</kbd>: New Random Colour
 
 ### Tools
 --FreeHand---
-1. Pen- Free hand drawing by dragging mouse
+1. ![alt text](https://lh3.googleusercontent.com/proxy/dPKzfUk810FdO59vqa1F6JnNqbUiAlara2I638103Naz4w28ygYSDo7EUzyf5YZWgOI5RIaTt55i-aaCypwjNmJBJCBaHKFX0EHn0xEHVP9IDCNL2sD8Oi6g2iifbnWKiyeCwNGeEt6_gqvqDFjX04Q)Pen- Free hand drawing by dragging mouse
 2. Eraser- Erases wherever mouse is dragged
 3. Highlighter- "Highlights" the text, please note this is not lag-friendly yet
 --Shape Drawers--
@@ -25,11 +25,11 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 5. Rect_Drawer- Draws a rect when mouse is dragged (please remember to toggle the fill and border)
 
 ### Features
-1. Saving and Loading- Allows you to save a sketch and retrieve it, even thou its the next session
-2. Reset_Canvas- Resets the Canvas
+1. Saving and Retrieving- Allows you to save a sketch and retrieve it in another session
+2. Reset_Canvas- Clears Drawings
 3. Download- Downloads the sketch
-4. Random Colour- Generates a Random Colour
-5. Adjust Canvas to fit window
+5. Canvas Adjustments
+6. Manage Lag- Frame Rate & Cutting Drawing Out of Frame (Drawing is not automatically removed as users might need it, since canvas size is adjustable)
 
 ### Configuration
 1. Tool- Displays different tools

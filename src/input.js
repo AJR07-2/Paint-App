@@ -20,7 +20,7 @@ function getInput(input) {
     } else if (input == 'randomColour') {
         RandomColour();
     } else if (input == 'save') {
-        Save();
+        Store();
     } else if (input == 'load') {
         var result = prompt('Are you sure you want to load the previous sketch? Changes in this current one might be lost!(enter "yes" if u are sure)');
         if (result == 'yes') {

@@ -14,5 +14,4 @@ function draw() {
     } else if (tool == "Rect Drawer") {
         rectDrawer();
     }
-    canvasBorder(0);
 }

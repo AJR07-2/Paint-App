@@ -10,7 +10,10 @@ function changeTool() {
         alert("This tool should be used as minimally as possible, due to the potential lag it creates. (Note, the thickness automatically adjusts other values (that you are unable to access)")
         toCheck = highlighterReq;
         opacity = 15;}
-    else if (tool == "Rect Drawer") {toCheck = rectDrawerReq}
+    else if (tool == "Rect Drawer") { toCheck = rectDrawerReq }
+    
+
+
     input = [];
     for (const i of toCheck) {
         input.push(i[0]);
@@ -23,6 +26,12 @@ function changeTool() {
         let setupValues = ["id", "value", "type"], counter = 0;
         let inputElement = document.createElement("input");
         for (const j of setupValues) {
+            if (j == "id" && i[counter] == "border") {
+                inputElement.setAttribute("checked", "true");
+                inputElement.setAttribute(j, i[counter]);
+                counter++;
+                continue;
+            }
             inputElement.setAttribute(j, i[counter]);
             counter++;
         }
@@ -96,7 +105,7 @@ function rectDrawer() {
     push();
     ShapeDrawerSettings();
     try {
-        rect((lineStartX + drawingPoints[0][0][0])/2, (lineStartY + drawingPoints[0][0][1])/2, lineStartX - drawingPoints[0][0][0], lineStartY  - drawingPoints[0][0][1], cornerRadius);
+        rect((lineStartX + drawingPoints[0][0][0])/2, (lineStartY + drawingPoints[0][0][1])/2, lineStartX - drawingPoints[0][0][0], lineStartY  - drawingPoints[0][0][1]);
     } catch {//do nothing
     }
 
