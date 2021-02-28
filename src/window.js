@@ -8,13 +8,7 @@ window.addEventListener('keydown', (event) => {
              opacity = 255;
              document.getElementById("opacity").value = 255;
         } else if (event.key === 'h') {
-            readTextFile("README.md");
-            try {
-                let help = document.getElementById("Help");
-                help.remove();
-            } catch {
-                
-            }
+            alert("Go to https://github.com/AJR07-2/Paint-App and read the README.md file :)")
         } else if (event.key === 'z') {
             try {
                 if (drawn[drawn.length - 1] == undefined) throw "Trying to redo nothing eh?";

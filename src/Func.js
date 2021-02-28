@@ -110,21 +110,6 @@ function canvasBorder(opacity) {
     rect(width / 2, height / 2, width, height);
 }
 
-//taken from https://stackoverflow.com/questions/14446447/how-to-read-a-local-text-file
-function readTextFile(file) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function () {
-        if (rawFile.readyState === 4) {
-            if (rawFile.status === 200 || rawFile.status == 0) {
-                var allText = rawFile.responseText;
-                alert(allText);
-            }
-        }
-    }
-    rawFile.send(null);
-}
-
 function RandomColour() {
     let letters = '0123456789ABCDEF'; colour = '#';
     for (var i = 0; i < 6; i++) colour += letters[Math.floor(Math.random() * 16)];
