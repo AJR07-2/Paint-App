@@ -24,7 +24,10 @@ function reloadDrawn() {
                 strokeWeight(i[1][6]);
                 i[1][4] = preBorder;
             }
-        } else {
+        } else if (i[0][0][1] == "Eraser") {
+            stroke("white");
+            noFill();
+        }else {
             noFill();
             colourToUse = color(i[1][0]);
             colourToUse.setAlpha(i[1][2]);
@@ -34,9 +37,11 @@ function reloadDrawn() {
         let previousX, previousY;
         for (const j of i[0]) {
             //exclusive configs for each tool when reloading drawn
-            if (j[1] == "Eraser") {
-                stroke("white");
-                noFill();
+            if (j[1] == "Pen" || j[1] == "Eraser") {
+                line(j[0][0], j[0][1], previousX, previousY);
+                previousX = j[0][0];
+                previousY = j[0][1];
+                continue;
             } else if (j[1] == "Highlighter") {
                 if (previousY != null) {
                     line(previousX + i[1][2] / 2, previousY + i[1][2] / 2, j[0][0], j[0][1]);
@@ -56,9 +61,6 @@ function reloadDrawn() {
                 previousX = j[0][0]; previousY = j[0][1];
                 continue;
             }
-            line(j[0][0], j[0][1], previousX, previousY);
-            previousX = j[0][0];
-            previousY = j[0][1];
         }
     }
     pop();

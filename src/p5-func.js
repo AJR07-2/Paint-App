@@ -6,7 +6,7 @@ function mouseDragged() {
         } else {
             drawingPoints = [];
             drawingPoints.push([[mouseX, mouseY], tool]);
-        } console.log(mouseX < width + thickness, thickness, width, mouseX)
+        }
     }
 }
 
@@ -21,6 +21,7 @@ function mousePressed() {
 
 function mouseReleased() {
     if (tool != NoDrag[0] && tool != NoDrag[1]) {
+        drawingPoints.push([[mouseX, mouseY], tool]);
         drawn.push([drawingPoints, [colour, thickness, opacity, tool]]);
         drawingPoints = [];
     } else if (tool == NoDrag[1]) {
