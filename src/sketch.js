@@ -14,4 +14,12 @@ function draw() {
     } else if (tool == "Rect Drawer") {
         rectDrawer();
     }
+    if (delay < 60) {
+        delay++;
+    } else {
+        delay = 0;
+        if (document.getElementById("Optimize Lag").checked) {
+            optimizeLag();
+        }
+    }
 }

@@ -1,17 +1,21 @@
 let lineDrawerBool = false, lineStartX = 0, lineStartY = 0;
 function mouseDragged() {
-    if (tool != NoDrag[0] && tool != NoDrag[1]) {
-        drawingPoints.push([[mouseX, mouseY], tool]);
-    } else {
-        drawingPoints = [];
-        drawingPoints.push([[mouseX, mouseY], tool]);
-    } 
+    if (mouseX < width && mouseX > -thickness && mouseY < height && mouseY > -thickness) {
+        if (tool != NoDrag[0] && tool != NoDrag[1]) {
+            drawingPoints.push([[mouseX, mouseY], tool]);
+        } else {
+            drawingPoints = [];
+            drawingPoints.push([[mouseX, mouseY], tool]);
+        } console.log(mouseX < width + thickness, thickness, width, mouseX)
+    }
 }
 
 function mousePressed() {
-    if (tool == NoDrag[0] || tool == NoDrag[1]) {
-        lineStartX = mouseX;
-        lineStartY = mouseY;
+    if (mouseX < width + thickness && mouseX > -thickness && mouseY < height - thickness && mouseY > -thickness) {
+        if (tool == NoDrag[0] || tool == NoDrag[1]) {
+            lineStartX = mouseX;
+            lineStartY = mouseY;
+        }
     }
 }
 

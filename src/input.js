@@ -62,15 +62,5 @@ function getInput(input) {
         opacityBorder = document.getElementById("opacity border").value;
     } else if (input == "corner radius") {
         cornerRadius = document.getElementById("corner radius").value;
-    } else if (input == "Frame Rate") {
-        if (document.getElementById("Frame Rate").value < 20) {
-            if (prompt("Are you sure you want to reduce the frame rate? This will reduce lag but it might affect drawing performance (Yes for I am sure)") == "Yes") {
-                frameRate(document.getElementById("Frame Rate").value);
-            }
-        }else {
-            frameRate(document.getElementById("Frame Rate").value);
-        }
-    } else if (input == "cutOutOfFrame") {
-        cutOutOfFrame();
     }
 }

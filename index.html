@@ -24,24 +24,18 @@
     For help to use this drawing tool: please type "h"
     <br> For code please use https://github.com/AJR07-2/Paint-App to access
   </p>
-
-  <label id="header">Lag Management</label>
-  <form id ="Lag Management">
-    <br>
-    <label>Frame Rate:</label>
-    <input type="number" value = "60" id= "Frame Rate" onchange="getInput('Frame Rate')">
-    <br>
-    <br>
-    <input type="button" onclick="getInput('cutOutOfFrame')" value = "Cut out-of-frame drawing">
-  </form>
-
-  <br>
   <br>
 
   <label id="header">Settings/Configuration</label>
   <form id = "Essential Buttons">
     <input type="button" id="download" value="Download" onclick="getInput('download')">
     <input type="button" id="resetCanvas" value="Reset Canvas" onclick="getInput('resetCanvas')">
+    <br>
+    <br>
+
+    <label>Lag Management</label>
+    <input type = "checkbox" value = "true" id = "Optimize Lag">
+
     <br>
     <br>
 

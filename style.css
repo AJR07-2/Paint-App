@@ -42,8 +42,10 @@ select{
 }
 
 #header{
-  background: rgb(5, 255, 5);
+  background: rgb(0, 255, 0);
   padding: 5px;
+  width: 600px;
+  border-radius: 0px;
 }
 
 canvas:hover {

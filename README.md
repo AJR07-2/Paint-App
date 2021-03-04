@@ -49,5 +49,6 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 1. Fix Clear Save
 2. Lag Improvements
 3. Drag and Drop
+4. README.md read
 
 --Done by Ang Jun Ray at January-March 2021 for CS Project--

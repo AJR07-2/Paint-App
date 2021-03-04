@@ -6,6 +6,7 @@ let opacity = 255;
 let width = 400;
 let height = 400;
 let refreshValues = ['colour', 'thickness', 'tool', 'opacity', 'width', 'height']
+let frameRateVal = 60, delay = 0;
 
 //Canvas drawing points array
 let canvas1;
