@@ -26,8 +26,9 @@ function retrieve() {
             let string = "", counter = 0;
             for (const i of sketchesAvailable) { counter++; string += counter + ". " + i + "\n";}
             sketchChosen = prompt("Which sketch would you want to retrieve? Here are the stored sketches so far: " + string);
-        } catch {
-            alert("Retrieving cancelled")
+        } catch (error){
+            alert("Retrieving cancelled");
+            console.log(error)
         }
         if (sketchesAvailable.indexOf(sketchChosen) == -1) {
             alert("That's an invalid sketch. (This is case-sensitive)")
@@ -53,8 +54,8 @@ function retrieve() {
 
 function clearSaved() {
     localStorage = window.localStorage;
-    prompt("Are you sure? All saved sketches will be removed (yes if u are)");
-    if (prompt == "Yes") {
-        localStorage.clear("sketches");
+    let prompt1 = prompt("Are you sure? All saved sketches will be removed ('Yes' if u are)");
+    if (prompt1 == "Yes") {
+        localStorage.clear();
     }
 }

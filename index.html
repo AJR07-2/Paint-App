@@ -15,15 +15,10 @@
   <script src = "src/don't-close.js"></script>
   <link rel="stylesheet" href="style.css">
   <meta charset="utf-8" />
-
-  <strong style="position: fixed; margin-left: 20%; font-size: large; padding: 10px; border: black solid 1px; background-color: yellow;">Paint App</strong>
-  <div style = "margin-left: 50%;" id = "Help">
-    <strong id= "text">For help on using this tool: (enter "h" to remove)</strong>
-    <br>
-    <br>
-    <iframe id="iframe" src="src/README.html" title="Help" style = "border: 3px solid yellow; position: fixed; background-color: green;"></iframe>
-  </div>
-
+  <br>
+  <strong style="position:relative; margin-left: 40%; font-size: large; padding: 10px; border: black solid 1px; background-color: yellow; width: 200px;">Paint App</strong>
+  <br>
+  <br>
   <label id="header">Settings/Configuration</label>
   <form id = "Essential Buttons">
     <input type="button" id="download" value="Download" onclick="getInput('download')">
@@ -85,6 +80,12 @@
   <br>
   <br>
   <script src="src/sketch.js" id= "size-indicator"></script>
+  <div style = "margin-left: 60%; position: fixed;" id = "Help">
+    <strong id= "text">For help on using this tool: (enter "h" to remove)</strong>
+    <br>
+    <br>
+    <iframe id="iframe" src="src/README.html" title="Help" style = "border: 3px solid yellow; position:initial; background-color: green;"></iframe>
+  </div>
 </body>
 
 </html>

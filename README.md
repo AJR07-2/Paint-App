@@ -30,12 +30,11 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 5. Rect_Drawer- Draws a rect when mouse is dragged
 
 ### Features
-
 1. Saving and Retrieving- Allows you to save a sketch and retrieve it in another session
 2. Reset_Canvas- Clears Drawings
 3. Download- Downloads the sketch
 4. Canvas Adjustments
-5. Manage Lag- Frame Rate & Cutting Drawing Out of Frame (Drawing is not automatically removed as users might need it, since canvas size is adjustable)
+5. Manage Lag- Turning it on will reduce P5's drawing frame Rate if required, and would cut make the lines less precise if needed
 
 ### Configuration
 
@@ -45,10 +44,6 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 4. Opacity- Adjusts Opacity/Transparency of drawing
 
 ### Further Improvements
-
-1. Fix Clear Save
-2. Lag Improvements
-3. Drag and Drop
-4. README.md read
+1. Drag and Drop
 
 --Done by Ang Jun Ray at January-March 2021 for CS Project--
