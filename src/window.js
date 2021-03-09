@@ -8,9 +8,10 @@ window.addEventListener('keydown', (event) => {
              opacity = 255;
              document.getElementById("opacity").value = 255;
         } else if (event.key === 'h') {
-            alert("Go to https://github.com/AJR07-2/Paint-App and read the README.md file :)")
-            help = document.getElementById("Help");
-            help.parentNode.removeChild(help);
+            let text = document.getElementById("text");
+            text.parentNode.removeChild(text);
+            let iframe = document.getElementById("iframe");
+            iframe.parentNode.removeChild(iframe);
         } else if (event.key === 'z') {
             try {
                 if (drawn[drawn.length - 1] == undefined) throw "Trying to redo nothing eh?";

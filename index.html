@@ -2,9 +2,7 @@
 <html lang="en">
 
 <head>
-
-
-
+  <script src="https://cdn.jsdelivr.net/remarkable/1.7.1/remarkable.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
   <script src="src/variable.js"></script>
   <script src="src/setup.js"></script>
@@ -18,13 +16,13 @@
   <link rel="stylesheet" href="style.css">
   <meta charset="utf-8" />
 
-
-
-  <p id = "Help">
-    For help to use this drawing tool: please type "h"
-    <br> For code please use https://github.com/AJR07-2/Paint-App to access
-  </p>
-  <br>
+  <strong style="position: fixed; margin-left: 20%; font-size: large; padding: 10px; border: black solid 1px; background-color: yellow;">Paint App</strong>
+  <div style = "margin-left: 50%;" id = "Help">
+    <strong id= "text">For help on using this tool: (enter "h" to remove)</strong>
+    <br>
+    <br>
+    <iframe id="iframe" src="src/README.html" title="Help" style = "border: 3px solid yellow; position: fixed; background-color: green;"></iframe>
+  </div>
 
   <label id="header">Settings/Configuration</label>
   <form id = "Essential Buttons">

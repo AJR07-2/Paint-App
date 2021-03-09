@@ -34,3 +34,7 @@ let eraserReq = [Sections[1]];
 let penReq = [Sections[0], Sections[1], Sections[2]];
 let LineDrawerReq = [Sections[0], Sections[1], Sections[2]];
 let rectDrawerReq = [Sections[3], Sections[4], Sections[5], Sections[6], Sections[7], Sections[8], Sections[1], Sections[9]];
+
+//remarkable for README.md reading
+var md = new Remarkable();
+
