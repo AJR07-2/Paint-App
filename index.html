@@ -2,10 +2,20 @@
 <html lang="en">
 
 <head>
+  <!--
+    Import font from google font
+  -->
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+  <!--
+    Import p5.js library
+  -->
   <script src="https://cdn.jsdelivr.net/remarkable/1.7.1/remarkable.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+  <!-- 
+    Import scripts
+  -->
   <script src="src/variable.js"></script>
-  <script src="src/setup.js"></script>
   <script src="src/input.js"></script>
   <script src="src/Func.js"></script>
   <script src="src/p5-func.js"></script>
@@ -16,9 +26,24 @@
   <link rel="stylesheet" href="style.css">
   <meta charset="utf-8" />
   <br>
+  <!-- 
+    Title/Header
+  -->
   <strong style="position:relative; margin-left: 40%; font-size: large; padding: 10px; border: black solid 1px; background-color: yellow; width: 200px;">Paint App</strong>
   <br>
   <br>
+  <!-- 
+    Help tab
+  -->
+  <div style = "margin-left: 60%; position: fixed; border-radius: 10px; background-color: yellow; padding: 10px;" id = "Help">
+    <strong id= "text">For help on using this tool: (enter "h" to remove)</strong>
+    <br>
+    <br>
+    <iframe id="iframe" src="src/README.html" title="Help" style = "border: 3px solid yellow; position:initial; background-color: green;"></iframe>
+  </div>
+  <!-- 
+    General settings/config HTML (you can tell from the text/id what each stands for)
+  -->
   <label id="header">Settings/Configuration</label>
   <form id = "Essential Buttons">
     <input type="button" id="download" value="Download" onclick="getInput('download')">
@@ -47,7 +72,9 @@
     <input type="button" id="adjustSize" value = "Adjust Canvas to Fit Window" onclick="getInput('adjustSize')">
     <br>
     <br>
-
+    <!--
+      Selecting the tools
+    -->
     <label for: "Tool">Tool:</label>
     <select name="Tool" id="tool" onchange="getInput('tool')">
       <optgroup label="Freehand">
@@ -67,25 +94,25 @@
   <br>
   <label id="header">Tool Properties</label>
   <br>
-
+  <!--
+    Section to configure tool properties such as colour (html added by javascript in tool.js)
+  -->
   <form id="Tool Selection">
     
   </form>
 </head>
-
 <br>
 
 <body>
+
+  <!--
+    P5 Drawing Canvas
+  -->
   <label id="header">Canvas</label>
   <br>
   <br>
   <script src="src/sketch.js" id= "size-indicator"></script>
-  <div style = "margin-left: 60%; position: fixed;" id = "Help">
-    <strong id= "text">For help on using this tool: (enter "h" to remove)</strong>
-    <br>
-    <br>
-    <iframe id="iframe" src="src/README.html" title="Help" style = "border: 3px solid yellow; position:initial; background-color: green;"></iframe>
-  </div>
+
 </body>
 
 </html>

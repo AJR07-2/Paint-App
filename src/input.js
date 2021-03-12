@@ -1,4 +1,5 @@
 function getInput(input) {
+    //basically receives the input for each input property in html
     if (input == 'colour') {
         colour = document.getElementById(refreshValues[0]).value;
     } else if (input == 'thickness') {

@@ -1,5 +1,4 @@
 # Year 2 CS- Paint
-
 Created as part of Computer Studies Year 2 Gradable Task 2
 
 1. https://ajr07-2.github.io/Paint-App/ to view project in action
@@ -17,15 +16,21 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 5. <kbd>u</kbd>: undo drawing
 6. <kbd>r</kbd>: redo drawing
 7. <kbd>c</kbd>: New Random Colour
+8. <kbd>t</kbd>: increases thickness by 10
+9. <kbd>s</kbd>: decreases thickness by 10
 
 ### Tools
 
---FreeHand---
+**FreeHand**
+<br>
 
 1. Pen- Free hand drawing by dragging mouse
 2. Eraser- Erases wherever mouse is dragged
 3. Highlighter- "Highlights" the text, please note this is not lag-friendly yet
-   --Shape Drawers--
+
+**Shape Drawers**
+<br>
+
 4. Line_Drawer- Draws a line when mouse is dragged
 5. Rect_Drawer- Draws a rect when mouse is dragged
 
@@ -34,10 +39,9 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 2. Reset_Canvas- Clears Drawings
 3. Download- Downloads the sketch
 4. Canvas Adjustments
-5. Manage Lag- Turning it on will reduce P5's drawing frame Rate if required, and would cut make the lines less precise if needed
+5. Manage Lag- Turning it on will reduce P5's drawing frame Rate if required (future improvements possible)
 
 ### Configuration
-
 1. Tool- Displays different tools
 2. Colour- Colour picker to pick different colours
 3. Thickness- Adjusts thickness of drawing
@@ -46,4 +50,4 @@ Created as part of Computer Studies Year 2 Gradable Task 2
 ### Further Improvements
 1. Drag and Drop
 
---Done by Ang Jun Ray at January-March 2021 for CS Project--
+**Done by Ang Jun Ray at January-March 2021 for CS Project**

@@ -1,28 +1,29 @@
 function changeTool() {
     let toCheck, parentDiv = document.getElementById("Tool Selection");
+
+    // Removal of the previous tools html inputs
     while (parentDiv.firstChild) {
         parentDiv.removeChild(parentDiv.lastChild);
     }
+
+    //getting the required input for the respective tools
     if (tool == "Pen") { toCheck = penReq; }
     else if (tool == "Eraser") { toCheck = eraserReq; }
     else if (tool == "Line Drawer") { toCheck = LineDrawerReq; }
     else if (tool == "Highlighter") {
-        alert("This tool should be used as minimally as possible, due to the potential lag it creates. (Note, the thickness automatically adjusts other values (that you are unable to access)")
         toCheck = highlighterReq;
         opacity = 15;}
     else if (tool == "Rect Drawer") { toCheck = rectDrawerReq }
     
-
-
-    input = [];
+    input = []; //resetting the array (previous input changes have been removed) that is called to check for input changes (in case html doesn't pick it up)
     for (const i of toCheck) {
         input.push(i[0]);
-        //label
+        //Add the label for the property
         let element = document.createElement("label");
         element.setAttribute("for", i[0]);
         element.innerHTML = i[0];
         parentDiv.appendChild(element);
-        //Input
+        //Add the input itself and look at the Requirements array for the specific type of input
         let setupValues = ["id", "value", "type"], counter = 0;
         let inputElement = document.createElement("input");
         for (const j of setupValues) {
@@ -37,7 +38,8 @@ function changeTool() {
         }
         inputElement.setAttribute("onclick", "getInput('" + i[0] + "')");
         parentDiv.appendChild(inputElement);
-        //If its colour, random colour generator
+
+        //If its colour, include a random colour generator
         if (i[0] == "colour") {
             let randomColour = document.createElement("input");
             randomColour.setAttribute("type", "button");
@@ -46,7 +48,8 @@ function changeTool() {
             randomColour.setAttribute("onclick", "getInput('randomColour')")
             parentDiv.appendChild(randomColour);
         }
-        //backspace
+
+        //Create backspaces in order for the properties not to be squeezed
         let backSpace = document.createElement("br");
         parentDiv.appendChild(backSpace);
         let backSpace1 = document.createElement("br");
